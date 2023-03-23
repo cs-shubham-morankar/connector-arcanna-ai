@@ -121,17 +121,13 @@
                 },
                 {
                     "title": "closingStatus",
-                    "type": "select",
+                    "type": "text",
                     "name": "closingStatus",
                     "required": true,
                     "visible": true,
                     "editable": true,
-                    "value": null,
-                    "options": [
-                        "drop_alert",
-                        "escalate_alert",
-                        "not_sure"
-                    ]
+                    "value": "",
+                    "tooltip": "Arcanna Label.Choose from: drop_alert,escalate_alert,class_3,class_4,class_5 (for custom label)"
                 }
             ],
             "open": false,
