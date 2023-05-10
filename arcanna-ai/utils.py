@@ -7,8 +7,6 @@ logger = get_logger(LOGGER_NAME)
 
 
 def invoke_rest_endpoint(config, endpoint, method='GET', data=None, headers=None):
-
-
     # utility function for a sample rest based integration using basic authentication
     # change as required for the specific integration being built
 
@@ -19,15 +17,14 @@ def invoke_rest_endpoint(config, endpoint, method='GET', data=None, headers=None
     verify_ssl = config.get('verify_ssl', True)
     if not server_address or not apikey:
         raise ConnectorError('Missing required parameters')
-    
+
     if headers is None:
         headers = {
-          'accept': 'application/json',
-          'x-arcanna-api-key': apikey
-          
+            'accept': 'application/json',
+            'x-arcanna-api-key': apikey
+
         }
-                        
-                        
+
     url = '{protocol}://{server_address}:{port}{endpoint}'.format(protocol=protocol.lower(),
                                                                   server_address=server_address,
                                                                   port=port,

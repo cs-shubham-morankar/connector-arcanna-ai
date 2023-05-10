@@ -5,6 +5,7 @@ from .constants import *
 logger = get_logger(LOGGER_NAME)
 from .utils import invoke_rest_endpoint
 
+
 def health_check(config=None, *args, **kwargs):
     auth_endpoint = HEALTH_ENDPOINT
     logger.info("Calling healthcheck")
