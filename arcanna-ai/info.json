@@ -30,7 +30,7 @@
         "required": true,
         "visible": true,
         "editable": true,
-        "tooltip": "Specify the URL of the Arcanna.ai server to connect and perform automated operations."
+        "description": "Specify the URL of the Arcanna.ai server to connect and perform automated operations."
       },
       {
         "title": "Server Port",
@@ -49,7 +49,7 @@
         "required": true,
         "visible": true,
         "editable": true,
-        "tooltip": "Specify the api key to access the Arcanna.ai server to connect and perform automated operations."
+        "description": "Specify the api key to access the Arcanna.ai server to connect and perform automated operations."
       },
       {
         "title": "Verify SSL",
