@@ -3,7 +3,7 @@
   "data": [
     {
       "@type": "WorkflowCollection",
-      "name": "Sample - ArcannaAi - 1.0.0",
+      "name": "Sample - Arcanna.ai - 1.0.0",
       "description": "Arcanna.ai is a platform for delivering decision intelligence. It augments Security Operation Center analysts in dealing with incoming threats by increasing analyst efficiency in decision-making. More information is available at https://arcanna.ai",
       "visible": true,
       "image": null,
