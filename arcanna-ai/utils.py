@@ -20,15 +20,12 @@ def invoke_rest_endpoint(config, endpoint, method='GET', data=None, headers=None
 
     if headers is None:
         headers = {
-            'accept': 'application/json',
+            'Content-Type': 'application/json',
             'x-arcanna-api-key': apikey
 
         }
 
-    url = '{protocol}://{server_address}:{port}{endpoint}'.format(protocol=protocol.lower(),
-                                                                  server_address=server_address,
-                                                                  port=port,
-                                                                  endpoint=endpoint)
+    url = f"{protocol.lower()}://{server_address}:{port}{endpoint}"
     logger.info(f"url={url}")
     try:
         response = requests.request(method, url, verify=verify_ssl,
@@ -41,4 +38,6 @@ def invoke_rest_endpoint(config, endpoint, method='GET', data=None, headers=None
         return response.json()
     else:
         logger.error(response.content)
+        logger.error(url)
+
         raise ConnectorError(response.content)

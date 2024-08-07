@@ -11,7 +11,8 @@ def get_jobs(config, params, *args, **kwargs):
     endpoint = JOBS_ENDPOINT
     request_body = {}
 
+    logger.info("Calling get_jobs for {}".format(endpoint))
+
     api_response = invoke_rest_endpoint(config, endpoint, 'GET', request_body)
 
-    logger.info("RESPONSE={}".format(api_response))
     return api_response
