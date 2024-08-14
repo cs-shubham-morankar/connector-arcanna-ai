@@ -93,6 +93,7 @@
         },
         {
           "title": "Retry Count",
+          "description": "Specify the retry count of the event based on which you want to retrieve event status from Arcanna.ai server.",
           "type": "integer",
           "name": "retryCount",
           "required": true,
@@ -102,6 +103,7 @@
         },
         {
           "title": "Wait Time",
+          "description": "Specify the wait time of the event based on which you want to retrieve event status from Arcanna.ai server.",
           "type": "integer",
           "name": "waitTime",
           "required": true,

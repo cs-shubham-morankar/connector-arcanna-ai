@@ -52,8 +52,8 @@ The following automated operations can be included in playbooks and you can also
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Job ID</td><td>Specify the ID of the job based on which you want to retrieve event status from Arcanna.ai server.
 </td></tr><tr><td>Event ID</td><td>Specify the ID of the event based on which you want to retrieve event status from Arcanna.ai server.
-</td></tr><tr><td>Retry Count</td><td>
-</td></tr><tr><td>Wait Time</td><td>
+</td></tr><tr><td>Retry Count</td><td>Specify the retry count of the event based on which you want to retrieve event status from Arcanna.ai server.
+</td></tr><tr><td>Wait Time</td><td>Specify the wait time of the event based on which you want to retrieve event status from Arcanna.ai server.
 </td></tr></tbody></table>
 
 #### Output
