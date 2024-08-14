@@ -3,7 +3,7 @@ Arcanna.ai is a platform for delivering decision intelligence. It augments Secur
 <p>This document provides information about the Arcanna.ai Connector, which facilitates automated interactions, with a Arcanna.ai server using FortiSOAR&trade; playbooks. Add the Arcanna.ai Connector as a step in FortiSOAR&trade; playbooks and perform automated operations with Arcanna.ai.</p>
 ### Version information
 
-Connector Version: 1.0.0
+Connector Version: 1.2.0
 
 
 Authored By: Arcanna.ai

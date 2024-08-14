@@ -14,11 +14,11 @@ def send_feedback(config, params, *args, **kwargs):
 
     data = {
         "cortex_user": user,
-        "feedback": closing_status,
-        "closing_notes": ""
+        "feedback": closing_status
     }
     request_body = data
     endpoint = EVENT_FEEDBACK_FORMAT.format(job_id, event_id)
     api_response = invoke_rest_endpoint(config, endpoint, 'PUT', request_body)
-    api_response.update({'my_custom_response_key': 'my_custom_value'})
+
+    api_response.update({'status': 'ok', "value": endpoint})
     return api_response
