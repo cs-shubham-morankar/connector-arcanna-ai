@@ -10,6 +10,35 @@ Connector Version: 1.1.0
 Authored By: Arcanna.ai
 
 Certified: No
+## Release Notes for version 1.1.0
+Following enhancements have been made to the Arcanna.ai Connector in version 1.1.0:
+<ul>
+<li><p>Added the following new operations and playbooks:</p>
+
+<ul>
+<li>Trigger AI Job Training</li>
+<li>Get Decision Set</li>
+<li>Export Event</li>
+</ul></li>
+<li><p>Added new parameters in some operation as follows:</p>
+
+<ul>
+<li><code>Retry Count</code> and <code>Wait Time</code> parameters in <code>Get Arcanna Response</code> operation.</li>
+</ul></li>
+<li><p>Renamed the following parameter for specified action:</p>
+
+<ul>
+<li>In action <code>Send Feedback</code>, Username is now User.</li>
+</ul></li>
+<li><p>Renamed the following actions:</p>
+
+<ul>
+<li><code>Send Event</code> to <code>Send To Arcanna</code>.</li>
+<li><code>Get Jobs List</code> to <code>Get Jobs</code>.</li>
+<li><code>Send Event Feedback</code> to <code>Send Feedback</code>.</li>
+<li><code>Get Event Status</code> to <code>Get Arcanna Response</code>.</li>
+</ul></li>
+</ul>
 
 ## Installing the connector
 <p>Use the <strong>Content Hub</strong> to install the connector. For the detailed procedure to install a connector, click <a href="https://docs.fortinet.com/document/fortisoar/0.0.0/installing-a-connector/1/installing-a-connector" target="_top">here</a>.</p><p>You can also use the <code>yum</code> command as a root user to install the connector:</p>
@@ -112,8 +141,8 @@ None.
 #### Input parameters
 <table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Job ID</td><td>Specify the ID of the job based on which you want to send event in Arcanna.ai server.
 </td></tr><tr><td>Title</td><td>Specify the title based on which you want to send event in Arcanna.ai server.
-</td></tr><tr><td>Case ID</td><td>Specify the ID of the case based on which you want to send event in Arcanna.ai server.
 </td></tr><tr><td>Body</td><td>Specify the body based on which you want to send event in Arcanna.ai server.
+</td></tr><tr><td>Case ID</td><td>Specify the ID of the case based on which you want to send event in Arcanna.ai server.
 </td></tr></tbody></table>
 
 #### Output
