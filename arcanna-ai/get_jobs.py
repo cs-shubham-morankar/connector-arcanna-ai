@@ -1,7 +1,12 @@
-import requests
+"""
+Copyright start
+MIT License
+Copyright (c) 2024 Fortinet Inc
+Copyright end
+"""
+
 from connectors.core.connector import get_logger, ConnectorError
 from .utils import invoke_rest_endpoint
-from .constants import LOGGER_NAME
 from .constants import *
 
 logger = get_logger(LOGGER_NAME)
