@@ -327,10 +327,10 @@
             "category": "investigation",
             "output_schema": {
                 "job_id": 1312,
-                "status": "pending_inference",
-                "event_id": "13122502661983",
+                "status": "",
+                "event_id": "",
                 "error_message": "",
-                "ingest_timestamp": "2024-09-12T11:53:05.250266Z"
+                "ingest_timestamp": ""
             },
             "enabled": true,
             "open": false
