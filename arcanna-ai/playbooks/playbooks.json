@@ -3,7 +3,7 @@
   "data": [
     {
       "@type": "WorkflowCollection",
-      "name": "Sample - Arcanna.ai - 1.1.0",
+      "name": "Sample - Arcanna.ai - 1.2.0",
       "description": "Sample playbooks for \"Arcanna.ai\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
       "visible": true,
       "image": null,
@@ -46,7 +46,7 @@
                   "title": "Test",
                   "caseId": ""
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "arcanna-ai",
                 "operation": "send_to_arcanna",
                 "operationTitle": "Send To Arcanna",
@@ -148,7 +148,7 @@
                 "params": {
                   "jobId": "1"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "arcanna-ai",
                 "operation": "get_decision_set",
                 "operationTitle": "Get Decision Set",
@@ -248,7 +248,7 @@
                 "name": "Arcanna.ai",
                 "config": "e0b1a106-cbf8-4397-a3f5-844035e14e4c",
                 "params": [],
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "arcanna-ai",
                 "operation": "get_jobs",
                 "operationTitle": "Get Jobs",
@@ -964,7 +964,7 @@
                 "params": {
                   "jobId": "1"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "arcanna-ai",
                 "operation": "trigger_training",
                 "operationTitle": "Trigger AI Job Training",
@@ -1034,7 +1034,7 @@
                   "eventId": "1",
                   "closingStatus": "NOT SURE"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "arcanna-ai",
                 "operation": "send_feedback",
                 "operationTitle": "Send Feedback",
@@ -1132,7 +1132,7 @@
                   "waitTime": 10,
                   "retryCount": 3
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "arcanna-ai",
                 "operation": "get_arcanna_response",
                 "operationTitle": "Get Arcanna Response",
@@ -1236,7 +1236,7 @@
                   "jobId": "1",
                   "eventId": "1"
                 },
-                "version": "1.1.0",
+                "version": "1.2.0",
                 "connector": "arcanna-ai",
                 "operation": "export_event",
                 "operationTitle": "Export Event",

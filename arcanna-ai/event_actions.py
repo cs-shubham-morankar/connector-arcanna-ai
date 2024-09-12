@@ -9,8 +9,10 @@ from connectors.core.connector import get_logger, ConnectorError
 from .constants import *
 from .utils import invoke_rest_endpoint
 import time
+import re
 
 logger = get_logger(LOGGER_NAME)
+
 
 def send_to_arcanna(config, params, *args, **kwargs):
     logger.info("Start sending.")
@@ -26,12 +28,18 @@ def send_to_arcanna(config, params, *args, **kwargs):
 
     endpoint = EVENTS_ENDPOINT
     if caseId is not None and caseId != "":
-        endpoint = endpoint + str(caseId)
+        pattern = re.compile(r'^[a-zA-Z0-9_\-]+$')
+        if bool(pattern.match(str(caseId))):
+            endpoint = endpoint + str(caseId)
+        else:
+            raise ConnectorError(
+                f"Invalid case id: {str(caseId)}. Only alphanumeric, dash and underscore characters are allowed.")
 
     request_body = data
 
     api_response = invoke_rest_endpoint(config, endpoint, 'POST', request_body)
     return api_response
+
 
 def get_arcanna_response(config, params, *args, **kwargs):
     event_id = params.get('eventId')
@@ -47,12 +55,14 @@ def get_arcanna_response(config, params, *args, **kwargs):
         time.sleep(wait_time)
     return api_response
 
+
 def export_event(config, params, *args, **kwargs):
     event_id = params.get('eventId')
     job_id = params.get('jobId')
     endpoint = EXPORT_EVENT_ENDPOINT.format(job_id, event_id)
     api_response = invoke_rest_endpoint(config, endpoint, 'GET', {})
     return api_response
+
 
 def send_feedback(config, params, *args, **kwargs):
     logger.info("Start sending feedback")
@@ -69,4 +79,3 @@ def send_feedback(config, params, *args, **kwargs):
     endpoint = EVENT_FEEDBACK_FORMAT.format(job_id, event_id)
     api_response = invoke_rest_endpoint(config, endpoint, 'PUT', request_body)
     return api_response
-
