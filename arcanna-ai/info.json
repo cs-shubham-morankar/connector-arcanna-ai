@@ -1,11 +1,11 @@
 {
-    "name": "arcanna-ai_dev",
-    "version": "1.1.5",
+    "name": "arcanna-ai",
+    "version": "1.2.0",
     "label": "Arcanna.ai",
     "description": "Arcanna.ai is a platform for delivering decision intelligence. It augments Security Operation Center analysts in dealing with incoming threats by increasing analyst efficiency in decision-making. More information is available at https://arcanna.ai",
     "publisher": "Arcanna.ai",
-    "icon_small_name": "arcanna_small.png",
-    "icon_large_name": "arcanna_large.png",
+    "icon_small_name": "small.png",
+    "icon_large_name": "large.png",
     "category": "Threat Intelligence",
     "configuration": {
         "fields": [
@@ -438,7 +438,6 @@
             }
         }
     ],
-    "forked_from": "arcanna-ai_1_1_0",
     "cs_approved": false,
     "cs_compatible": true,
     "contributor": "Arcanna.ai",
