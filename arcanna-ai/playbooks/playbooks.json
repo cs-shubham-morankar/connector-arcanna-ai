@@ -4,345 +4,226 @@
     {
       "@type": "WorkflowCollection",
       "name": "Sample - Arcanna.ai - 1.2.0",
-      "description": "Sample playbooks for \"Arcanna.ai\" connector. If you are planning to use any of the sample playbooks in your environment, ensure that you clone those playbooks and move them to a different collection, since the sample playbook collection gets deleted during connector upgrade and delete.",
+      "description": null,
       "visible": true,
       "image": null,
-      "uuid": "97845131-2528-42f5-b470-f17a3493d02b",
-      "id": 104,
+      "uuid": "6ab61629-f297-4907-8d6c-5de5ac37e9fb",
+      "id": 57,
       "deletedAt": null,
       "importedBy": [],
-      "recordTags": [
-        "arcanna-ai"
-      ],
+      "recordTags": [],
       "workflows": [
         {
           "@type": "Workflow",
           "triggerLimit": null,
-          "name": "Send To Arcanna",
+          "name": "Arcanna.ai flow example",
           "aliasName": null,
           "tag": null,
-          "description": "Send an event in Arcanna.ai server based on the job ID, title, and other input parameters you have specified.",
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": 1723629100,
-          "collection": "/api/3/workflow_collections/97845131-2528-42f5-b470-f17a3493d02b",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/044f5bee-9c56-4f3e-a868-8bc40e9bf37d",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Send To Arcanna",
-              "description": null,
-              "arguments": {
-                "name": "Arcanna.ai",
-                "config": "",
-                "params": {
-                  "body": "",
-                  "jobId": "1",
-                  "title": "Test",
-                  "caseId": ""
-                },
-                "version": "1.2.0",
-                "connector": "arcanna-ai",
-                "operation": "send_to_arcanna",
-                "operationTitle": "Send To Arcanna",
-                "pickFromTenant": false,
-                "step_variables": []
-              },
-              "status": null,
-              "top": "165",
-              "left": "125",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "76f01a95-85e3-4d8a-9444-a915b4b67cc5"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "a57c10ea-c5f0-41f4-aff9-f8e686bbb9d1",
-                "title": "ArcannaAi: Send To Arcanna",
-                "resources": [
-                  "alerts"
-                ],
-                "__triggerLimit": true,
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "params": [],
-                    "records": "{{vars.input.records}}"
-                  }
-                },
-                "triggerOnSource": true,
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "showToasterMessage": {
-                  "visible": false,
-                  "messageVisible": true
-                },
-                "triggerOnReplicate": false,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "30",
-              "left": "125",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "group": null,
-              "uuid": "044f5bee-9c56-4f3e-a868-8bc40e9bf37d"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start -> Send To Arcanna",
-              "targetStep": "/api/3/workflow_steps/76f01a95-85e3-4d8a-9444-a915b4b67cc5",
-              "sourceStep": "/api/3/workflow_steps/044f5bee-9c56-4f3e-a868-8bc40e9bf37d",
-              "label": null,
-              "isExecuted": false,
-              "group": null,
-              "uuid": "3b3251fa-4fdc-4f5b-9cd7-bb6fa19ad265"
-            }
-          ],
-          "groups": [],
-          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
-          "uuid": "12dc80a1-718d-4de5-b21b-c3a629c48c5a",
-          "id": 1160,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null,
-          "importedBy": [],
-          "recordTags": [
-            "arcanna-ai"
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Get Decision Set",
-          "aliasName": null,
-          "tag": null,
-          "description": "Retrieve the information of decision set from Arcanna.ai server based on the job ID you have specified.",
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": 1723628865,
-          "collection": "/api/3/workflow_collections/97845131-2528-42f5-b470-f17a3493d02b",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/e75cae80-1ea4-4d30-a22a-bfc1a0ab5921",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Get Decision Set",
-              "description": null,
-              "arguments": {
-                "name": "Arcanna.ai",
-                "config": "e0b1a106-cbf8-4397-a3f5-844035e14e4c",
-                "params": {
-                  "jobId": "1"
-                },
-                "version": "1.2.0",
-                "connector": "arcanna-ai",
-                "operation": "get_decision_set",
-                "operationTitle": "Get Decision Set",
-                "pickFromTenant": false,
-                "step_variables": []
-              },
-              "status": null,
-              "top": "165",
-              "left": "125",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "332c6b06-ab34-4b17-9d03-cafeed99d71f"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "805dbd20-aa5a-4954-a203-828574041eeb",
-                "title": "ArcannaAi: Get Decision Set",
-                "resources": [
-                  "alerts"
-                ],
-                "__triggerLimit": true,
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "params": [],
-                    "records": "{{vars.input.records}}"
-                  }
-                },
-                "triggerOnSource": true,
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "showToasterMessage": {
-                  "visible": false,
-                  "messageVisible": true
-                },
-                "triggerOnReplicate": false,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "30",
-              "left": "125",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "group": null,
-              "uuid": "e75cae80-1ea4-4d30-a22a-bfc1a0ab5921"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start -> Get Decision Set",
-              "targetStep": "/api/3/workflow_steps/332c6b06-ab34-4b17-9d03-cafeed99d71f",
-              "sourceStep": "/api/3/workflow_steps/e75cae80-1ea4-4d30-a22a-bfc1a0ab5921",
-              "label": null,
-              "isExecuted": false,
-              "group": null,
-              "uuid": "0014e38b-922e-4511-ac7f-3d2cec58974b"
-            }
-          ],
-          "groups": [],
-          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
-          "uuid": "2368bc3c-d7c7-4a4e-9af5-435dd051b27c",
-          "id": 1166,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null,
-          "importedBy": [],
-          "recordTags": [
-            "arcanna-ai"
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Get Jobs",
-          "aliasName": null,
-          "tag": null,
-          "description": "Retrieves a list of all the jobs from Arcanna.ai server.",
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": 1723629029,
-          "collection": "/api/3/workflow_collections/97845131-2528-42f5-b470-f17a3493d02b",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/79ce7a86-97ee-44c8-b3e8-2217b7e53004",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Get Jobs",
-              "description": null,
-              "arguments": {
-                "name": "Arcanna.ai",
-                "config": "e0b1a106-cbf8-4397-a3f5-844035e14e4c",
-                "params": [],
-                "version": "1.2.0",
-                "connector": "arcanna-ai",
-                "operation": "get_jobs",
-                "operationTitle": "Get Jobs",
-                "pickFromTenant": false,
-                "step_variables": []
-              },
-              "status": null,
-              "top": "165",
-              "left": "125",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "991d9c47-e15b-4960-acab-34919df2cfbe"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "4ad82d36-e8b0-4a46-baf6-314d25582119",
-                "title": "ArcannaAi: Get Jobs",
-                "resources": [
-                  "alerts"
-                ],
-                "__triggerLimit": true,
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "params": [],
-                    "records": "{{vars.input.records}}"
-                  }
-                },
-                "triggerOnSource": true,
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "showToasterMessage": {
-                  "visible": false,
-                  "messageVisible": true
-                },
-                "triggerOnReplicate": false,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "30",
-              "left": "125",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "group": null,
-              "uuid": "79ce7a86-97ee-44c8-b3e8-2217b7e53004"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start -> Get Jobs",
-              "targetStep": "/api/3/workflow_steps/991d9c47-e15b-4960-acab-34919df2cfbe",
-              "sourceStep": "/api/3/workflow_steps/79ce7a86-97ee-44c8-b3e8-2217b7e53004",
-              "label": null,
-              "isExecuted": false,
-              "group": null,
-              "uuid": "172162b0-d18d-4f87-999b-fbfac692221e"
-            }
-          ],
-          "groups": [],
-          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
-          "uuid": "2a50c209-4a3a-4b88-bee2-0e4f8bfd39c4",
-          "id": 1161,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null,
-          "importedBy": [],
-          "recordTags": [
-            "arcanna-ai"
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Arcanna.ai UseCase",
-          "aliasName": null,
-          "tag": null,
-          "description": "Example of how to integrate Arcanna in case.",
+          "description": "Playbook with example use case for Arcanna.ai",
           "isActive": true,
           "debug": true,
           "singleRecordExecution": false,
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1683645067,
-          "collection": "/api/3/workflow_collections/97845131-2528-42f5-b470-f17a3493d02b",
+          "lastModifyDate": 1726215873,
+          "collection": "/api/3/workflow_collections/6ab61629-f297-4907-8d6c-5de5ac37e9fb",
           "versions": [],
-          "triggerStep": "/api/3/workflow_steps/ba34c6b7-e6c3-4129-95bd-7a75d692cd37",
+          "triggerStep": "/api/3/workflow_steps/b46c5d62-c6d7-41be-8ed4-7b7f76ea38dc",
           "steps": [
             {
               "@type": "WorkflowStep",
-              "name": "Approve case close",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "8bc7a145-24ab-49b5-a40f-19b3cfb25e91",
+                "resources": [
+                  "incidents"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  },
+                  "jobName": "test job 1.50.1"
+                },
+                "displayConditions": {
+                  "incidents": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "310",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "b46c5d62-c6d7-41be-8ed4-7b7f76ea38dc"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Job by Name",
+              "description": null,
+              "arguments": {
+                "name": "Arcanna.ai",
+                "config": "82c390ef-6d43-4d22-bf1d-55748a8987ee",
+                "params": {
+                  "jobName": "{{vars.jobName}}"
+                },
+                "version": "1.2.0",
+                "connector": "arcanna-ai",
+                "operation": "get_job_by_name",
+                "operationTitle": "Get Job By Name",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "310",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "b563d8a8-dd97-42c5-befc-06f3b21e9b3c"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Send to Arcanna",
+              "description": null,
+              "arguments": {
+                "name": "Arcanna.ai",
+                "config": "82c390ef-6d43-4d22-bf1d-55748a8987ee",
+                "params": {
+                  "body": "{{vars.input.records[0]}}",
+                  "jobId": "{{vars.steps.Get_Job_by_Name.data['job_id']}}",
+                  "caseId": ""
+                },
+                "version": "1.2.0",
+                "connector": "arcanna-ai",
+                "operation": "send_to_arcanna",
+                "operationTitle": "Send Event",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "300",
+              "left": "310",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "d5038221-2233-4790-b3e2-b0caaf160dcc"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Decision",
+              "description": null,
+              "arguments": {
+                "name": "Arcanna.ai",
+                "config": "82c390ef-6d43-4d22-bf1d-55748a8987ee",
+                "params": {
+                  "jobId": "{{vars.steps.Get_Job_by_Name.data['job_id']}}",
+                  "eventId": "{{vars.steps.Send_to_Arcanna.data['event_id']}}",
+                  "waitTime": 5,
+                  "retryCount": 10
+                },
+                "version": "1.2.0",
+                "connector": "arcanna-ai",
+                "operation": "get_arcanna_response",
+                "operationTitle": "Get Decision on Event",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "435",
+              "left": "310",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "b26368d9-ee9a-42ed-96b0-c13e14489bd9"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Escalate or Drop",
+              "description": null,
+              "arguments": {
+                "conditions": [
+                  {
+                    "option": "Drop",
+                    "step_iri": "/api/3/workflow_steps/b97cea8e-417b-4030-b929-e5a398cf34d2",
+                    "condition": "{{ vars.steps.Get_Decision.data['result_label'] == 'Drop' }}",
+                    "step_name": "Approve case closure"
+                  },
+                  {
+                    "option": "Escalate",
+                    "step_iri": "/api/3/workflow_steps/6b05ec0b-81da-4454-a509-9bfde719236c",
+                    "condition": "{{ vars.steps.Get_Decision.data['result_label'] == 'Escalate' }}",
+                    "step_name": "Investigate"
+                  },
+                  {
+                    "default": true,
+                    "step_iri": "/api/3/workflow_steps/6b05ec0b-81da-4454-a509-9bfde719236c",
+                    "step_name": "Investigate"
+                  }
+                ]
+              },
+              "status": null,
+              "top": "560",
+              "left": "300",
+              "stepType": "/api/3/workflow_step_types/12254cf5-5db7-4b1a-8cb1-3af081924b28",
+              "group": null,
+              "uuid": "11da23f4-7720-46f3-b221-15d42fc4ec1f"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Give Feedback",
+              "description": null,
+              "arguments": {
+                "type": "DecisionBased",
+                "input": {
+                  "schema": {
+                    "title": "Give feedback",
+                    "description": "What should Arcanna.ai do with this type of event next time it sees something similar?",
+                    "inputVariables": []
+                  }
+                },
+                "record": "{{ vars.input.records[0][\"@id\"] }}",
+                "resources": "incidents",
+                "owner_detail": {
+                  "isAssigned": false
+                },
+                "isRecordLinked": true,
+                "step_variables": [],
+                "response_mapping": {
+                  "options": [
+                    {
+                      "option": "Escalate",
+                      "step_iri": "/api/3/workflow_steps/b96e5b24-3d54-4b39-abe9-d1f1272369e2"
+                    },
+                    {
+                      "option": "Drop",
+                      "step_iri": "/api/3/workflow_steps/fe61e441-0af7-4439-b138-bdf9bd1dea4a"
+                    }
+                  ],
+                  "duplicateOption": false
+                },
+                "email_notification": {
+                  "enabled": false,
+                  "smtpParameters": []
+                }
+              },
+              "status": null,
+              "top": "900",
+              "left": "140",
+              "stepType": "/api/3/workflow_step_types/fc04082a-d7dc-4299-96fb-6837b1baa0fe",
+              "group": null,
+              "uuid": "d49cee9d-1ca5-4ce9-91f5-b9999cfe3b42"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Approve case closure",
               "description": null,
               "arguments": {
                 "resource": {
@@ -375,736 +256,291 @@
                   "userOwners": [
                     "/api/3/people/3451141c-bac6-467c-8d72-85e0fab569ce"
                   ],
-                  "playbookiri": "api/3/workflows/34e6d409-6cdd-4fed-96b1-8643151ad6bb",
-                  "playbookname": "test_arcanna",
-                  "playbookuuid": "34e6d409-6cdd-4fed-96b1-8643151ad6bb",
-                  "approvaldescription": "ok to close the ticket?"
+                  "playbookiri": "api/3/workflows/0fbcd28b-2e34-4164-8b5e-d15eb298690a",
+                  "playbookname": "Send Event and Get Decision",
+                  "playbookuuid": "0fbcd28b-2e34-4164-8b5e-d15eb298690a",
+                  "approvaldescription": "ok to close ticket?"
                 },
                 "collection": "approvals",
                 "step_variables": []
               },
               "status": null,
-              "top": "840",
-              "left": "825",
+              "top": "705",
+              "left": "495",
               "stepType": "/api/3/workflow_step_types/6832e556-b9c7-497a-babe-feda3bd27dcg",
               "group": null,
-              "uuid": "8ba55ee6-724e-40bf-864b-5b9a8be28663"
+              "uuid": "b97cea8e-417b-4030-b929-e5a398cf34d2"
             },
             {
               "@type": "WorkflowStep",
-              "name": "Close with drop_alert",
+              "name": "Drop Feedback",
               "description": null,
               "arguments": {
-                "resource": {
-                  "status": "/api/3/picklists/fac53e73-8d16-4189-98d5-95fbd1555232",
-                  "closureReason": "/api/3/picklists/2b0112f6-4746-4dab-ada6-a8cd1e675572"
+                "name": "Arcanna.ai",
+                "config": "82c390ef-6d43-4d22-bf1d-55748a8987ee",
+                "params": {
+                  "user": "",
+                  "jobId": "{{vars.steps.Get_Job_by_Name.data['job_id']}}",
+                  "eventId": "{{vars.steps.Send_to_Arcanna.data['event_id']}}",
+                  "feedback": "Drop"
                 },
-                "operation": "Append",
-                "collection": "{{ vars.input.records[0][\"@id\"] }}",
-                "__recommend": [],
-                "collectionType": "/api/3/alerts",
-                "fieldOperation": {
-                  "recordTags": "Append"
-                },
+                "version": "1.2.0",
+                "connector": "arcanna-ai",
+                "operation": "send_feedback",
+                "operationTitle": "Send Feedback",
+                "pickFromTenant": false,
                 "step_variables": []
               },
               "status": null,
-              "top": "1110",
-              "left": "125",
-              "stepType": "/api/3/workflow_step_types/b593663d-7d13-40ce-a3a3-96dece928722",
+              "top": "840",
+              "left": "485",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
               "group": null,
-              "uuid": "d9bf39c7-4557-42f4-a9d5-05a781910893"
+              "uuid": "fe61e441-0af7-4439-b138-bdf9bd1dea4a"
             },
             {
               "@type": "WorkflowStep",
-              "name": "Close with escalate_alert",
+              "name": "Escalate Feedback",
+              "description": null,
+              "arguments": {
+                "name": "Arcanna.ai",
+                "config": "82c390ef-6d43-4d22-bf1d-55748a8987ee",
+                "params": {
+                  "user": "",
+                  "jobId": "{{vars.steps.Get_Job_by_Name.data['job_id']}}",
+                  "eventId": "{{vars.steps.Send_to_Arcanna.data['event_id']}}",
+                  "feedback": "Escalate"
+                },
+                "version": "1.2.0",
+                "connector": "arcanna-ai",
+                "operation": "send_feedback",
+                "operationTitle": "Send Feedback",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "1020",
+              "left": "160",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "b96e5b24-3d54-4b39-abe9-d1f1272369e2"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Mark as false positive",
               "description": null,
               "arguments": {
                 "resource": {
-                  "status": "/api/3/picklists/fac53e73-8d16-4189-98d5-95fbd1555232",
+                  "closureReason": "/api/3/picklists/2b0112f6-4746-4dab-ada6-a8cd1e675572"
+                },
+                "operation": "Append",
+                "collection": "{{vars.input.records[0]['@id']}}",
+                "__recommend": [],
+                "collectionType": "/api/3/alerts",
+                "fieldOperation": [],
+                "step_variables": []
+              },
+              "status": null,
+              "top": "975",
+              "left": "485",
+              "stepType": "/api/3/workflow_step_types/b593663d-7d13-40ce-a3a3-96dece928722",
+              "group": null,
+              "uuid": "0e8489a3-9f71-4438-b6b3-bd9c74528bb4"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Mark as resolved",
+              "description": null,
+              "arguments": {
+                "resource": {
                   "closureReason": "/api/3/picklists/2ab3e8e9-8cd9-4641-8400-a18a4e8a2da8"
                 },
                 "operation": "Append",
-                "collection": "{{ vars.input.records[0][\"@id\"] }}",
+                "collection": "{{vars.input.records[0]['@id']}}",
                 "__recommend": [],
                 "collectionType": "/api/3/alerts",
                 "fieldOperation": [],
                 "step_variables": []
               },
               "status": null,
-              "top": "1110",
-              "left": "475",
+              "top": "1160",
+              "left": "160",
               "stepType": "/api/3/workflow_step_types/b593663d-7d13-40ce-a3a3-96dece928722",
               "group": null,
-              "uuid": "68f01b00-a25a-45c2-b499-ad38beb6f4a5"
+              "uuid": "6ba3e0ca-e500-4cc4-b35b-1c6e46e9d78d"
             },
             {
               "@type": "WorkflowStep",
-              "name": "Close with False Positive",
+              "name": "Investigate",
               "description": null,
               "arguments": {
                 "resource": {
-                  "status": "/api/3/picklists/fac53e73-8d16-4189-98d5-95fbd1555232",
-                  "closureReason": "/api/3/picklists/2b0112f6-4746-4dab-ada6-a8cd1e675572"
+                  "hunt": null,
+                  "name": "Investigate",
+                  "type": null,
+                  "dueBy": null,
+                  "alerts": null,
+                  "assets": null,
+                  "owners": null,
+                  "status": null,
+                  "stepid": null,
+                  "persons": null,
+                  "comments": null,
+                  "fsrQueue": null,
+                  "priority": null,
+                  "taskdata": null,
+                  "tasktype": null,
+                  "warrooms": null,
+                  "companies": null,
+                  "incidents": null,
+                  "startDate": null,
+                  "indicators": null,
+                  "recordTags": null,
+                  "userOwners": null,
+                  "workflowid": null,
+                  "attachments": null,
+                  "description": null,
+                  "approvalhost": null,
+                  "actualMinutes": null,
+                  "assignedOnDate": null,
+                  "completedOnDate": null,
+                  "assignedToPerson": null
                 },
-                "_showJson": false,
-                "operation": "Append",
-                "collection": "{{ vars.input.records[0][\"@id\"] }}",
-                "__recommend": [],
-                "collectionType": "/api/3/alerts",
-                "fieldOperation": [],
+                "collection": "tasks",
                 "step_variables": []
               },
               "status": null,
-              "top": "1110",
-              "left": "825",
-              "stepType": "/api/3/workflow_step_types/b593663d-7d13-40ce-a3a3-96dece928722",
+              "top": "760",
+              "left": "80",
+              "stepType": "/api/3/workflow_step_types/dc6ac63d-c5a5-472f-9eb4-6b18473a98b8",
               "group": null,
-              "uuid": "c98f7a1d-62a3-44cf-bd83-fd4d5c3af7ac"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Closure Reason",
-              "description": null,
-              "arguments": {
-                "type": "DecisionBased",
-                "input": {
-                  "schema": {
-                    "title": "Decision on alert",
-                    "description": "drop or escalate",
-                    "inputVariables": []
-                  }
-                },
-                "record": "{{ vars.input.records[0][\"@id\"] }}",
-                "resources": "alerts",
-                "owner_detail": {
-                  "isAssigned": false
-                },
-                "isRecordLinked": true,
-                "step_variables": [],
-                "response_mapping": {
-                  "options": [
-                    {
-                      "option": "drop_alert",
-                      "primary": false,
-                      "step_iri": "/api/3/workflow_steps/2f5e968a-2983-4fba-84e3-6ab25e228227"
-                    },
-                    {
-                      "option": "escalate_alert",
-                      "step_iri": "/api/3/workflow_steps/03460d94-12b1-423a-98a5-dd0201a8b838"
-                    }
-                  ],
-                  "duplicateOption": false
-                },
-                "email_notification": {
-                  "enabled": false,
-                  "smtpParameters": []
-                }
-              },
-              "status": null,
-              "top": "840",
-              "left": "300",
-              "stepType": "/api/3/workflow_step_types/fc04082a-d7dc-4299-96fb-6837b1baa0fe",
-              "group": null,
-              "uuid": "204097f1-2b52-484b-bfd1-c2bac14ca990"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Escalate or Drop",
-              "description": null,
-              "arguments": {
-                "conditions": [
-                  {
-                    "option": "Drop Alert",
-                    "step_iri": "/api/3/workflow_steps/8ba55ee6-724e-40bf-864b-5b9a8be28663",
-                    "condition": "{{ vars.steps.Get_inference_result.data.result == 'drop_alert' }}",
-                    "step_name": "Approve case close"
-                  },
-                  {
-                    "option": "Escalate Alert",
-                    "step_iri": "/api/3/workflow_steps/204097f1-2b52-484b-bfd1-c2bac14ca990",
-                    "condition": "{{ vars.steps.Get_inference_result.data.result != 'drop_alert' }}",
-                    "step_name": "Closure Reason"
-                  }
-                ]
-              },
-              "status": null,
-              "top": "705",
-              "left": "475",
-              "stepType": "/api/3/workflow_step_types/12254cf5-5db7-4b1a-8cb1-3af081924b28",
-              "group": null,
-              "uuid": "d54a842b-4c60-449c-af5f-484077ff0360"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Get inference result",
-              "description": null,
-              "arguments": {
-                "name": "ArcannaAi",
-                "config": "",
-                "params": {
-                  "jobId": "{{vars.job_id}}",
-                  "eventId": "{{vars.steps.Send_record_to_Arcanna.data.event_id}}"
-                },
-                "version": "1.0.1",
-                "connector": "Arcanna",
-                "operation": "get_arcanna_response",
-                "operationTitle": "GET Arcanna RESPONSE",
-                "pickFromTenant": false,
-                "step_variables": []
-              },
-              "status": null,
-              "top": "570",
-              "left": "475",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "b6e0a955-65ab-4dfc-b16c-01d07a552991"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Send feedback with drop_alert",
-              "description": null,
-              "arguments": {
-                "name": "ArcannaAi",
-                "config": "",
-                "params": {
-                  "user": "{{vars.input.records[0].assignedTo.lastname}}",
-                  "jobId": "{{vars.job_id}}",
-                  "eventId": "{{vars.steps.Send_record_to_Arcanna.data.event_id}}",
-                  "closingStatus": "drop_alert"
-                },
-                "version": "1.0.1",
-                "connector": "Arcanna",
-                "operation": "send_feedback",
-                "operationTitle": "Send Feedback",
-                "pickFromTenant": false,
-                "step_variables": []
-              },
-              "status": null,
-              "top": "975",
-              "left": "125",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "2f5e968a-2983-4fba-84e3-6ab25e228227"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Send feedback with drop_alert 2",
-              "description": null,
-              "arguments": {
-                "name": "ArcannaAi",
-                "config": "",
-                "params": {
-                  "user": "{{vars.input.records[0].assignedTo.lastname}}",
-                  "jobId": "{{vars.job_id}}",
-                  "eventId": "{{vars.steps.Send_record_to_Arcanna.data.event_id}}",
-                  "closingStatus": "drop_alert"
-                },
-                "version": "1.0.1",
-                "connector": "Arcanna",
-                "operation": "send_feedback",
-                "operationTitle": "Send Feedback",
-                "pickFromTenant": false,
-                "step_variables": []
-              },
-              "status": null,
-              "top": "975",
-              "left": "825",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "72b93683-e8b7-4f4f-b7a9-f557d5703972"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Send feedback with escalate_alert",
-              "description": null,
-              "arguments": {
-                "name": "ArcannaAi",
-                "config": "",
-                "params": {
-                  "user": "{{vars.input.records[0].assignedTo.lastname}}",
-                  "jobId": "{{vars.job_id}}",
-                  "eventId": "{{vars.steps.Send_record_to_Arcanna.data.event_id}}",
-                  "closingStatus": "escalate_alert"
-                },
-                "version": "1.0.1",
-                "connector": "Arcanna",
-                "operation": "send_feedback",
-                "operationTitle": "Send Feedback",
-                "pickFromTenant": false,
-                "step_variables": []
-              },
-              "status": null,
-              "top": "975",
-              "left": "475",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "03460d94-12b1-423a-98a5-dd0201a8b838"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Send record to Arcanna",
-              "description": null,
-              "arguments": {
-                "name": "ArcannaAi",
-                "config": "",
-                "params": {
-                  "body": "{{vars.input.records[0]}}",
-                  "jobId": "{{vars.job_id}}",
-                  "title": "{{vars.input.records[0].description}}",
-                  "caseId": "{{vars.input.records[0].id}}"
-                },
-                "version": "1.0.1",
-                "connector": "Arcanna",
-                "operation": "send_to_arcanna",
-                "operationTitle": "Send To Arcanna",
-                "pickFromTenant": false,
-                "step_variables": []
-              },
-              "status": null,
-              "top": "300",
-              "left": "475",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "3eb55803-ce63-4ed1-8140-daf378fc271e"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Set job_id",
-              "description": null,
-              "arguments": {
-                "job_id": "1260"
-              },
-              "status": null,
-              "top": "165",
-              "left": "475",
-              "stepType": "/api/3/workflow_step_types/04d0cf46-b6a8-42c4-8683-60a7eaa69e8f",
-              "group": null,
-              "uuid": "5d6ad94a-d866-4b9a-b2ae-11a90bd25535"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Start_",
-              "description": null,
-              "arguments": {
-                "route": "b02e811a-04b7-440a-8473-c8d9dd601ebc",
-                "title": "trigger arcanna simple playbook",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "params": [],
-                    "records": "{{vars.input.records}}"
-                  }
-                },
-                "displayConditions": {
-                  "alerts": {
-                    "sort": [],
-                    "limit": 30,
-                    "logic": "AND",
-                    "filters": []
-                  },
-                  "incidents": {
-                    "sort": [],
-                    "limit": 30,
-                    "logic": "AND",
-                    "filters": []
-                  }
-                },
-                "executeButtonText": "Execute",
-                "noRecordExecution": false,
-                "singleRecordExecution": true
-              },
-              "status": null,
-              "top": "30",
-              "left": "475",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "group": null,
-              "uuid": "ba34c6b7-e6c3-4129-95bd-7a75d692cd37"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Wait for inference",
-              "description": null,
-              "arguments": {
-                "rule": {
-                  "actions": [
-                    {
-                      "type": "resume_playbook",
-                      "enabled": true,
-                      "channel_uuid": "e2ce87c2-c55a-11ec-9d64-0242ac120002"
-                    }
-                  ],
-                  "is_active": true,
-                  "event_source": "crudhub"
-                },
-                "type": "TimeBased",
-                "delay": {
-                  "days": 0,
-                  "hours": 0,
-                  "weeks": 0,
-                  "minutes": 0,
-                  "seconds": 10
-                }
-              },
-              "status": null,
-              "top": "435",
-              "left": "475",
-              "stepType": "/api/3/workflow_step_types/6832e556-b9c7-497a-babe-feda3bd27dbf",
-              "group": null,
-              "uuid": "a6f463be-5a22-428d-8f12-a31407cf521a"
+              "uuid": "6b05ec0b-81da-4454-a509-9bfde719236c"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "name": "Approve case close -> Send feedback with drop_alert 2",
-              "targetStep": "/api/3/workflow_steps/72b93683-e8b7-4f4f-b7a9-f557d5703972",
-              "sourceStep": "/api/3/workflow_steps/8ba55ee6-724e-40bf-864b-5b9a8be28663",
+              "name": "Start -> Get Job by Name",
+              "targetStep": "/api/3/workflow_steps/b563d8a8-dd97-42c5-befc-06f3b21e9b3c",
+              "sourceStep": "/api/3/workflow_steps/b46c5d62-c6d7-41be-8ed4-7b7f76ea38dc",
               "label": null,
               "isExecuted": false,
-              "group": null,
-              "uuid": "246bb740-5cf9-4372-bb5b-2ecc25e9152c"
+              "uuid": "f7faba8f-9854-4110-9be5-ca025ae2d79d"
             },
             {
               "@type": "WorkflowRoute",
-              "name": "Closure Reason -> Send feedback with drop_alert",
-              "targetStep": "/api/3/workflow_steps/2f5e968a-2983-4fba-84e3-6ab25e228227",
-              "sourceStep": "/api/3/workflow_steps/204097f1-2b52-484b-bfd1-c2bac14ca990",
-              "label": "drop_alert",
-              "isExecuted": false,
-              "group": null,
-              "uuid": "7608ae9b-3860-491f-b4ab-1e5eb8b15f9d"
-            },
-            {
-              "@type": "WorkflowRoute",
-              "name": "Closure Reason -> Send feedback with escalate_alert",
-              "targetStep": "/api/3/workflow_steps/03460d94-12b1-423a-98a5-dd0201a8b838",
-              "sourceStep": "/api/3/workflow_steps/204097f1-2b52-484b-bfd1-c2bac14ca990",
-              "label": "escalate_alert",
-              "isExecuted": false,
-              "group": null,
-              "uuid": "f2d62d8c-1991-41f0-a3c4-364e4448fd9c"
-            },
-            {
-              "@type": "WorkflowRoute",
-              "name": "Escalate or Drop -> Approve case close",
-              "targetStep": "/api/3/workflow_steps/8ba55ee6-724e-40bf-864b-5b9a8be28663",
-              "sourceStep": "/api/3/workflow_steps/d54a842b-4c60-449c-af5f-484077ff0360",
-              "label": "Drop Alert",
-              "isExecuted": false,
-              "group": null,
-              "uuid": "42ac4f1b-68e3-4b4e-9b82-ee38dcbb2f98"
-            },
-            {
-              "@type": "WorkflowRoute",
-              "name": "Escalate or Drop -> Closure Reason",
-              "targetStep": "/api/3/workflow_steps/204097f1-2b52-484b-bfd1-c2bac14ca990",
-              "sourceStep": "/api/3/workflow_steps/d54a842b-4c60-449c-af5f-484077ff0360",
-              "label": "Escalate Alert",
-              "isExecuted": false,
-              "group": null,
-              "uuid": "38dad7bd-cbbc-4b7a-bfb7-f767c977c7f8"
-            },
-            {
-              "@type": "WorkflowRoute",
-              "name": "Get inference result -> Escalate or Drop",
-              "targetStep": "/api/3/workflow_steps/d54a842b-4c60-449c-af5f-484077ff0360",
-              "sourceStep": "/api/3/workflow_steps/b6e0a955-65ab-4dfc-b16c-01d07a552991",
+              "name": "Get Job by Name -> Send to Arcanna",
+              "targetStep": "/api/3/workflow_steps/d5038221-2233-4790-b3e2-b0caaf160dcc",
+              "sourceStep": "/api/3/workflow_steps/b563d8a8-dd97-42c5-befc-06f3b21e9b3c",
               "label": null,
               "isExecuted": false,
-              "group": null,
-              "uuid": "d409c651-2cd3-4fd2-b036-a5dbd0df92e1"
+              "uuid": "0bab2bee-8f80-4d0e-bed3-4fb7c037a5ef"
             },
             {
               "@type": "WorkflowRoute",
-              "name": "Send feedback with drop_alert 2 -> Close with False Positive",
-              "targetStep": "/api/3/workflow_steps/c98f7a1d-62a3-44cf-bd83-fd4d5c3af7ac",
-              "sourceStep": "/api/3/workflow_steps/72b93683-e8b7-4f4f-b7a9-f557d5703972",
+              "name": "Send to Arcanna -> Get Decision",
+              "targetStep": "/api/3/workflow_steps/b26368d9-ee9a-42ed-96b0-c13e14489bd9",
+              "sourceStep": "/api/3/workflow_steps/d5038221-2233-4790-b3e2-b0caaf160dcc",
               "label": null,
               "isExecuted": false,
-              "group": null,
-              "uuid": "600892d0-81cc-4abd-9b22-84003980d0a1"
+              "uuid": "2fb62e48-204c-4a8e-82a0-583c7a3f05c0"
             },
             {
               "@type": "WorkflowRoute",
-              "name": "Send feedback with drop_alert -> Close with drop_alert",
-              "targetStep": "/api/3/workflow_steps/d9bf39c7-4557-42f4-a9d5-05a781910893",
-              "sourceStep": "/api/3/workflow_steps/2f5e968a-2983-4fba-84e3-6ab25e228227",
+              "name": "Get Decision -> Escalate or Drop",
+              "targetStep": "/api/3/workflow_steps/11da23f4-7720-46f3-b221-15d42fc4ec1f",
+              "sourceStep": "/api/3/workflow_steps/b26368d9-ee9a-42ed-96b0-c13e14489bd9",
               "label": null,
               "isExecuted": false,
-              "group": null,
-              "uuid": "37f40adf-5dc8-436c-a8d1-e807ff0eb614"
+              "uuid": "6f462796-aa90-4d90-937b-afbfec6ff65b"
             },
             {
               "@type": "WorkflowRoute",
-              "name": "Send feedback with escalate_alert -> Close with escalate_alert",
-              "targetStep": "/api/3/workflow_steps/68f01b00-a25a-45c2-b499-ad38beb6f4a5",
-              "sourceStep": "/api/3/workflow_steps/03460d94-12b1-423a-98a5-dd0201a8b838",
-              "label": null,
+              "name": "Escalate or Drop -> Approve case closure",
+              "targetStep": "/api/3/workflow_steps/b97cea8e-417b-4030-b929-e5a398cf34d2",
+              "sourceStep": "/api/3/workflow_steps/11da23f4-7720-46f3-b221-15d42fc4ec1f",
+              "label": "Drop",
               "isExecuted": false,
-              "group": null,
-              "uuid": "010ea513-3804-471b-98aa-e704dc030af1"
+              "uuid": "06202801-5138-485b-9455-fe5354b7cb45"
             },
             {
               "@type": "WorkflowRoute",
-              "name": "Send record to Arcanna -> Wait for inference",
-              "targetStep": "/api/3/workflow_steps/a6f463be-5a22-428d-8f12-a31407cf521a",
-              "sourceStep": "/api/3/workflow_steps/3eb55803-ce63-4ed1-8140-daf378fc271e",
+              "name": "Approve case closure -> Give Feedback to Drop",
+              "targetStep": "/api/3/workflow_steps/fe61e441-0af7-4439-b138-bdf9bd1dea4a",
+              "sourceStep": "/api/3/workflow_steps/b97cea8e-417b-4030-b929-e5a398cf34d2",
               "label": null,
               "isExecuted": false,
-              "group": null,
-              "uuid": "ba11eba9-1068-43d8-b9e4-0987a534530d"
+              "uuid": "cd20235d-d63e-49b6-b2f7-c4beaebaf632"
             },
             {
               "@type": "WorkflowRoute",
-              "name": "Set job_id -> Send record to Arcanna",
-              "targetStep": "/api/3/workflow_steps/3eb55803-ce63-4ed1-8140-daf378fc271e",
-              "sourceStep": "/api/3/workflow_steps/5d6ad94a-d866-4b9a-b2ae-11a90bd25535",
-              "label": null,
+              "name": "Give Feedback -> Escalate Feedback",
+              "targetStep": "/api/3/workflow_steps/b96e5b24-3d54-4b39-abe9-d1f1272369e2",
+              "sourceStep": "/api/3/workflow_steps/d49cee9d-1ca5-4ce9-91f5-b9999cfe3b42",
+              "label": "Escalate",
               "isExecuted": false,
-              "group": null,
-              "uuid": "5823e329-ecf2-4f17-9a58-0573c60e5b07"
+              "uuid": "6e56849b-5d61-4baf-a6ad-1f7cacd9191c"
             },
             {
               "@type": "WorkflowRoute",
-              "name": "Start_ -> fda",
-              "targetStep": "/api/3/workflow_steps/5d6ad94a-d866-4b9a-b2ae-11a90bd25535",
-              "sourceStep": "/api/3/workflow_steps/ba34c6b7-e6c3-4129-95bd-7a75d692cd37",
+              "name": "Drop Feedback -> Mark as false positive",
+              "targetStep": "/api/3/workflow_steps/0e8489a3-9f71-4438-b6b3-bd9c74528bb4",
+              "sourceStep": "/api/3/workflow_steps/fe61e441-0af7-4439-b138-bdf9bd1dea4a",
               "label": null,
               "isExecuted": false,
-              "group": null,
-              "uuid": "ff002d5a-12a0-4821-ab15-66cd495da848"
+              "uuid": "c73490ef-2d33-4b23-8d55-5c0934c3c27b"
             },
             {
               "@type": "WorkflowRoute",
-              "name": "Wait for inference -> Get inference result",
-              "targetStep": "/api/3/workflow_steps/b6e0a955-65ab-4dfc-b16c-01d07a552991",
-              "sourceStep": "/api/3/workflow_steps/a6f463be-5a22-428d-8f12-a31407cf521a",
+              "name": "Escalate Feedback -> Mark as resolved",
+              "targetStep": "/api/3/workflow_steps/6ba3e0ca-e500-4cc4-b35b-1c6e46e9d78d",
+              "sourceStep": "/api/3/workflow_steps/b96e5b24-3d54-4b39-abe9-d1f1272369e2",
               "label": null,
               "isExecuted": false,
-              "group": null,
-              "uuid": "db083fe4-7e9e-44d6-b9af-1daeda8cea15"
+              "uuid": "19ff4021-3fa3-4324-ab81-1e8eab6249cb"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Give Feedback -> Drop Feedback",
+              "targetStep": "/api/3/workflow_steps/fe61e441-0af7-4439-b138-bdf9bd1dea4a",
+              "sourceStep": "/api/3/workflow_steps/d49cee9d-1ca5-4ce9-91f5-b9999cfe3b42",
+              "label": "Drop",
+              "isExecuted": false,
+              "uuid": "5b8cc698-a6e8-4060-ab0c-6d9b420606cf"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Escalate or Drop -> Investigate",
+              "targetStep": "/api/3/workflow_steps/6b05ec0b-81da-4454-a509-9bfde719236c",
+              "sourceStep": "/api/3/workflow_steps/11da23f4-7720-46f3-b221-15d42fc4ec1f",
+              "label": "Escalate",
+              "isExecuted": false,
+              "uuid": "5e0e8632-8d04-42b3-9781-d3ad8c560832"
+            },
+            {
+              "@type": "WorkflowRoute",
+              "name": "Investigate -> Give Feedback",
+              "targetStep": "/api/3/workflow_steps/d49cee9d-1ca5-4ce9-91f5-b9999cfe3b42",
+              "sourceStep": "/api/3/workflow_steps/6b05ec0b-81da-4454-a509-9bfde719236c",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "569feb79-b363-442d-9717-3b0ec8e2acaa"
             }
           ],
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
-          "uuid": "3833078a-aecc-41ac-8279-6b878c9c376d",
-          "id": 1162,
+          "uuid": "0fbcd28b-2e34-4164-8b5e-d15eb298690a",
+          "id": 576,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
           "importedBy": [],
-          "recordTags": [
-            "arcanna-ai"
-          ]
+          "recordTags": []
         },
         {
           "@type": "Workflow",
           "triggerLimit": null,
-          "name": "Trigger AI Job Training",
-          "aliasName": null,
-          "tag": null,
-          "description": "Trigger AI job training in Arcanna.ai server based on the job ID you have specified.",
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": 1723628821,
-          "collection": "/api/3/workflow_collections/97845131-2528-42f5-b470-f17a3493d02b",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/26fe13b9-f63f-4f3f-b785-245db83f2dbe",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "893609a6-6fa8-402f-bdd5-8776d30a0033",
-                "title": "ArcannaAi: Trigger AI Job Training",
-                "resources": [
-                  "alerts"
-                ],
-                "__triggerLimit": true,
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "params": [],
-                    "records": "{{vars.input.records}}"
-                  }
-                },
-                "triggerOnSource": true,
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "showToasterMessage": {
-                  "visible": false,
-                  "messageVisible": true
-                },
-                "triggerOnReplicate": false,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "30",
-              "left": "125",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "group": null,
-              "uuid": "26fe13b9-f63f-4f3f-b785-245db83f2dbe"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Trigger AI Job Training",
-              "description": null,
-              "arguments": {
-                "name": "Arcanna.ai",
-                "config": "",
-                "params": {
-                  "jobId": "1"
-                },
-                "version": "1.2.0",
-                "connector": "arcanna-ai",
-                "operation": "trigger_training",
-                "operationTitle": "Trigger AI Job Training",
-                "pickFromTenant": false,
-                "step_variables": []
-              },
-              "status": null,
-              "top": "165",
-              "left": "125",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "91235110-cb1a-48d3-bc43-e07d36b15f35"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start -> Trigger AI Job Training",
-              "targetStep": "/api/3/workflow_steps/91235110-cb1a-48d3-bc43-e07d36b15f35",
-              "sourceStep": "/api/3/workflow_steps/26fe13b9-f63f-4f3f-b785-245db83f2dbe",
-              "label": null,
-              "isExecuted": false,
-              "group": null,
-              "uuid": "1f4add94-2fa2-49f8-80ca-192cb3e4ae8e"
-            }
-          ],
-          "groups": [],
-          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
-          "uuid": "4bd42d16-9bc0-4f0a-99a8-e8faaad28b2e",
-          "id": 1165,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null,
-          "importedBy": [],
-          "recordTags": [
-            "arcanna-ai"
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Send Feedback",
-          "aliasName": null,
-          "tag": null,
-          "description": "Send an feedback for a event in Arcanna.ai server.",
-          "isActive": false,
-          "debug": false,
-          "singleRecordExecution": false,
-          "remoteExecutableFlag": false,
-          "parameters": [],
-          "synchronous": false,
-          "lastModifyDate": 1723628976,
-          "collection": "/api/3/workflow_collections/97845131-2528-42f5-b470-f17a3493d02b",
-          "versions": [],
-          "triggerStep": "/api/3/workflow_steps/1765d117-cd81-4d95-b44e-2bf84ade5048",
-          "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Send Feedback",
-              "description": null,
-              "arguments": {
-                "name": "Arcanna.ai",
-                "config": "",
-                "params": {
-                  "user": "1",
-                  "jobId": "1",
-                  "eventId": "1",
-                  "closingStatus": "NOT SURE"
-                },
-                "version": "1.2.0",
-                "connector": "arcanna-ai",
-                "operation": "send_feedback",
-                "operationTitle": "Send Feedback",
-                "pickFromTenant": false,
-                "step_variables": []
-              },
-              "status": null,
-              "top": "165",
-              "left": "125",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "3e14d334-e0b4-467c-85c2-800ac27e0217"
-            },
-            {
-              "@type": "WorkflowStep",
-              "name": "Start",
-              "description": null,
-              "arguments": {
-                "route": "dd3b555f-8b1d-40d1-93b9-fb07c0238336",
-                "title": "ArcannaAi: Send Event Feedback",
-                "resources": [
-                  "alerts"
-                ],
-                "inputVariables": [],
-                "step_variables": {
-                  "input": {
-                    "params": [],
-                    "records": "{{vars.input.records}}"
-                  }
-                },
-                "executeButtonText": "Execute",
-                "noRecordExecution": true,
-                "singleRecordExecution": false
-              },
-              "status": null,
-              "top": "30",
-              "left": "125",
-              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
-              "group": null,
-              "uuid": "1765d117-cd81-4d95-b44e-2bf84ade5048"
-            }
-          ],
-          "routes": [
-            {
-              "@type": "WorkflowRoute",
-              "name": "Start -> Send Feedback",
-              "targetStep": "/api/3/workflow_steps/3e14d334-e0b4-467c-85c2-800ac27e0217",
-              "sourceStep": "/api/3/workflow_steps/1765d117-cd81-4d95-b44e-2bf84ade5048",
-              "label": null,
-              "isExecuted": false,
-              "group": null,
-              "uuid": "d21ecf39-d7e5-4d49-9d84-117eab8af462"
-            }
-          ],
-          "groups": [],
-          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
-          "uuid": "7686c607-0a9e-4ca9-82a9-8ab030bfada9",
-          "id": 1163,
-          "owners": [],
-          "isPrivate": false,
-          "deletedAt": null,
-          "importedBy": [],
-          "recordTags": [
-            "arcanna-ai"
-          ]
-        },
-        {
-          "@type": "Workflow",
-          "triggerLimit": null,
-          "name": "Get Arcanna Response",
+          "name": "Get Decision on Event",
           "aliasName": null,
           "tag": null,
           "description": "Retrieves a event status from Arcanna.ai server based on the job ID and event ID that you have specified.",
@@ -1114,44 +550,17 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1723628762,
-          "collection": "/api/3/workflow_collections/97845131-2528-42f5-b470-f17a3493d02b",
+          "lastModifyDate": 1726215763,
+          "collection": "/api/3/workflow_collections/6ab61629-f297-4907-8d6c-5de5ac37e9fb",
           "versions": [],
-          "triggerStep": "/api/3/workflow_steps/f0b1c6e9-bad4-45a7-bb28-0633e3d069e6",
+          "triggerStep": "/api/3/workflow_steps/8b72d55b-c2f5-497c-a7d3-32c8d8a54e35",
           "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Get Arcanna Response",
-              "description": null,
-              "arguments": {
-                "name": "Arcanna.ai",
-                "config": "",
-                "params": {
-                  "jobId": "1",
-                  "eventId": "1",
-                  "waitTime": 10,
-                  "retryCount": 3
-                },
-                "version": "1.2.0",
-                "connector": "arcanna-ai",
-                "operation": "get_arcanna_response",
-                "operationTitle": "Get Arcanna Response",
-                "pickFromTenant": false,
-                "step_variables": []
-              },
-              "status": null,
-              "top": "165",
-              "left": "125",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "652a7fd0-4bc2-431c-a176-43fd07292b65"
-            },
             {
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "arguments": {
-                "route": "9d40249a-480c-4258-9fa8-1d927423b270",
+                "route": "97d35c49-bb54-43ff-8df6-acea3f12f5c7",
                 "title": "ArcannaAi: Get Arcanna Response",
                 "resources": [
                   "alerts"
@@ -1180,25 +589,51 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "group": null,
-              "uuid": "f0b1c6e9-bad4-45a7-bb28-0633e3d069e6"
+              "uuid": "8b72d55b-c2f5-497c-a7d3-32c8d8a54e35"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Decision on Event",
+              "description": null,
+              "arguments": {
+                "name": "Arcanna.ai",
+                "config": "82c390ef-6d43-4d22-bf1d-55748a8987ee",
+                "params": {
+                  "jobId": "1",
+                  "eventId": "1",
+                  "waitTime": 5,
+                  "retryCount": 10
+                },
+                "version": "1.2.0",
+                "connector": "arcanna-ai",
+                "operation": "get_arcanna_response",
+                "operationTitle": "Get Decision on Event",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "01e0d92b-0153-40c8-928b-379e7d314e54"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "name": "Start -> Get Arcanna Response",
-              "targetStep": "/api/3/workflow_steps/652a7fd0-4bc2-431c-a176-43fd07292b65",
-              "sourceStep": "/api/3/workflow_steps/f0b1c6e9-bad4-45a7-bb28-0633e3d069e6",
+              "name": "Start -> Get Decision on Event",
+              "targetStep": "/api/3/workflow_steps/01e0d92b-0153-40c8-928b-379e7d314e54",
+              "sourceStep": "/api/3/workflow_steps/8b72d55b-c2f5-497c-a7d3-32c8d8a54e35",
               "label": null,
               "isExecuted": false,
-              "group": null,
-              "uuid": "85865925-82c4-411e-b063-e9e3e4c5f00f"
+              "uuid": "4e317e74-34e3-4c18-978b-becabc59407a"
             }
           ],
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
-          "uuid": "ceca7800-bc43-406a-9baf-73daa5bebf77",
-          "id": 1164,
+          "uuid": "27740f2a-af85-460a-83bb-b0d19e8e9eb0",
+          "id": 583,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -1210,7 +645,601 @@
         {
           "@type": "Workflow",
           "triggerLimit": null,
-          "name": "Export Event",
+          "name": "Send To Arcanna",
+          "aliasName": null,
+          "tag": null,
+          "description": "Send an event in Arcanna.ai server based on the job ID, title, and other input parameters you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1726215663,
+          "collection": "/api/3/workflow_collections/6ab61629-f297-4907-8d6c-5de5ac37e9fb",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/ad3c1d97-76f0-4894-8115-d64f7ac88081",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "959a6690-c1a8-4ad0-b848-8e90ccb1fc5e",
+                "title": "ArcannaAi: Send To Arcanna",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "ad3c1d97-76f0-4894-8115-d64f7ac88081"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Send to Arcanna",
+              "description": null,
+              "arguments": {
+                "name": "Arcanna.ai",
+                "config": "82c390ef-6d43-4d22-bf1d-55748a8987ee",
+                "params": {
+                  "body": "{\n   \"test\": \"input\"\n}",
+                  "jobId": "1",
+                  "caseId": ""
+                },
+                "version": "1.2.0",
+                "connector": "arcanna-ai",
+                "operation": "send_to_arcanna",
+                "operationTitle": "Send Event",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "faaf8af5-dcc2-4c27-933a-cb361b54ffa0"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Send to Arcanna",
+              "targetStep": "/api/3/workflow_steps/faaf8af5-dcc2-4c27-933a-cb361b54ffa0",
+              "sourceStep": "/api/3/workflow_steps/ad3c1d97-76f0-4894-8115-d64f7ac88081",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "9f79342c-1b68-4410-8602-d9335573a130"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "35d33f32-f3b7-40e8-a790-8e10a506bc13",
+          "id": 578,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "arcanna-ai"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Trigger Job Training",
+          "aliasName": null,
+          "tag": null,
+          "description": "Trigger AI job training in Arcanna.ai server based on the job ID you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1726215840,
+          "collection": "/api/3/workflow_collections/6ab61629-f297-4907-8d6c-5de5ac37e9fb",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/ca043e7e-e860-4906-8727-e02295a188ae",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "e5d27704-f185-469b-8028-4b2b6d414887",
+                "title": "ArcannaAi: Trigger AI Job Training",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "ca043e7e-e860-4906-8727-e02295a188ae"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Trigger Job Training",
+              "description": null,
+              "arguments": {
+                "name": "Arcanna.ai",
+                "config": "82c390ef-6d43-4d22-bf1d-55748a8987ee",
+                "params": {
+                  "jobId": "1",
+                  "username": ""
+                },
+                "version": "1.2.0",
+                "connector": "arcanna-ai",
+                "operation": "trigger_training",
+                "operationTitle": "Trigger Job Training",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "957f493c-a615-42fd-8ccd-d1eb5b608d32"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Trigger Job Training",
+              "targetStep": "/api/3/workflow_steps/957f493c-a615-42fd-8ccd-d1eb5b608d32",
+              "sourceStep": "/api/3/workflow_steps/ca043e7e-e860-4906-8727-e02295a188ae",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "ec34769e-8d5d-465f-a506-4c4b92ac1191"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "37b7d4d3-0aa6-4745-ba29-96157ee9ddb5",
+          "id": 581,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "arcanna-ai"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Stop Job",
+          "aliasName": null,
+          "tag": null,
+          "description": "Stop a job in Arcanna.ai",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1726215992,
+          "collection": "/api/3/workflow_collections/6ab61629-f297-4907-8d6c-5de5ac37e9fb",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/269c8e04-571f-4ee8-954e-d9b669626e9f",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "1f4aad79-6aa1-4890-a1c7-9a2330ea774b",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "269c8e04-571f-4ee8-954e-d9b669626e9f"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Stop Job",
+              "description": null,
+              "arguments": {
+                "name": "Arcanna.ai",
+                "config": "82c390ef-6d43-4d22-bf1d-55748a8987ee",
+                "params": {
+                  "jobId": "1",
+                  "username": ""
+                },
+                "version": "1.2.0",
+                "connector": "arcanna-ai",
+                "operation": "stop_job",
+                "operationTitle": "Stop Job",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "4e67e4ce-1bf7-4989-bc39-b264644d724c"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Start Job",
+              "targetStep": "/api/3/workflow_steps/4e67e4ce-1bf7-4989-bc39-b264644d724c",
+              "sourceStep": "/api/3/workflow_steps/269c8e04-571f-4ee8-954e-d9b669626e9f",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "d50f040a-be34-4e18-9735-f603b6a3b98c"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "3ec265ed-d078-4a88-9306-a178dc2c0588",
+          "id": 586,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": []
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Decision Set",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieve the information of decision set from Arcanna.ai server based on the job ID you have specified.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1726215603,
+          "collection": "/api/3/workflow_collections/6ab61629-f297-4907-8d6c-5de5ac37e9fb",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/7cb632ab-7995-4701-9cfa-b01d2aa156ea",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "0848639b-3ec0-420a-8c97-98745608eb49",
+                "title": "ArcannaAi: Get Decision Set",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "7cb632ab-7995-4701-9cfa-b01d2aa156ea"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get decisions for job",
+              "description": null,
+              "arguments": {
+                "name": "Arcanna.ai",
+                "config": "82c390ef-6d43-4d22-bf1d-55748a8987ee",
+                "params": {
+                  "jobId": "1"
+                },
+                "version": "1.2.0",
+                "connector": "arcanna-ai",
+                "operation": "get_decision_set",
+                "operationTitle": "Get Job Decision Set",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "bb4febe7-957a-43e2-95fb-69ddfde1ba77"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get decisions for job",
+              "targetStep": "/api/3/workflow_steps/bb4febe7-957a-43e2-95fb-69ddfde1ba77",
+              "sourceStep": "/api/3/workflow_steps/7cb632ab-7995-4701-9cfa-b01d2aa156ea",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "d62dbfac-4bbc-48d4-a986-0925b2573177"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "4f48f89d-4d14-43a6-97d2-32516876dbe0",
+          "id": 579,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "arcanna-ai"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Jobs",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieves a list of all the jobs from Arcanna.ai server.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1726215700,
+          "collection": "/api/3/workflow_collections/6ab61629-f297-4907-8d6c-5de5ac37e9fb",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/8ea2d7db-0656-4b83-8c0a-a262fee06fda",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "1b3b0442-0fd3-47e7-bfc1-3e1aa77d3bbd",
+                "title": "ArcannaAi: Get Jobs",
+                "resources": [
+                  "alerts"
+                ],
+                "__triggerLimit": true,
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "triggerOnSource": true,
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "showToasterMessage": {
+                  "visible": false,
+                  "messageVisible": true
+                },
+                "triggerOnReplicate": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "8ea2d7db-0656-4b83-8c0a-a262fee06fda"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Jobs",
+              "description": null,
+              "arguments": {
+                "name": "Arcanna.ai",
+                "config": "82c390ef-6d43-4d22-bf1d-55748a8987ee",
+                "params": [],
+                "version": "1.2.0",
+                "connector": "arcanna-ai",
+                "operation": "get_jobs",
+                "operationTitle": "Get Jobs",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "cda28c5c-2c0d-43b5-920b-5a83343bab34"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get Jobs",
+              "targetStep": "/api/3/workflow_steps/cda28c5c-2c0d-43b5-920b-5a83343bab34",
+              "sourceStep": "/api/3/workflow_steps/8ea2d7db-0656-4b83-8c0a-a262fee06fda",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "bbb5b2e8-defe-44ff-b4bb-3a403bb55753"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "7ae2989e-6a02-44bd-9c83-f162eceaddec",
+          "id": 580,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "arcanna-ai"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Send Feedback",
+          "aliasName": null,
+          "tag": null,
+          "description": "Send an feedback for a event in Arcanna.ai server.",
+          "isActive": false,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1726215715,
+          "collection": "/api/3/workflow_collections/6ab61629-f297-4907-8d6c-5de5ac37e9fb",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/a2554bd7-bed2-4b4d-a07e-5a25c1d8ae42",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "c6cde0ac-65fe-48c7-8091-5fc66a5f0341",
+                "title": "ArcannaAi: Send Event Feedback",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "a2554bd7-bed2-4b4d-a07e-5a25c1d8ae42"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Send Feedback",
+              "description": null,
+              "arguments": {
+                "name": "Arcanna.ai",
+                "config": "82c390ef-6d43-4d22-bf1d-55748a8987ee",
+                "params": {
+                  "user": "",
+                  "jobId": "1",
+                  "eventId": "1",
+                  "feedback": "Drop"
+                },
+                "version": "1.2.0",
+                "connector": "arcanna-ai",
+                "operation": "send_feedback",
+                "operationTitle": "Send Feedback",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "dd57b9fc-e8b5-4da5-b59c-d5981873d705"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Send Feedback 2",
+              "targetStep": "/api/3/workflow_steps/dd57b9fc-e8b5-4da5-b59c-d5981873d705",
+              "sourceStep": "/api/3/workflow_steps/a2554bd7-bed2-4b4d-a07e-5a25c1d8ae42",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "61243f7b-9478-4bca-ab5a-d87312dfa255"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "82f2e137-88a9-42ef-bccc-e076a84b96ca",
+          "id": 582,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": [
+            "arcanna-ai"
+          ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Event",
           "aliasName": null,
           "tag": null,
           "description": "Exports an event from Arcanna.ai server based on the job ID and event ID that you have specified.",
@@ -1220,42 +1249,17 @@
           "remoteExecutableFlag": false,
           "parameters": [],
           "synchronous": false,
-          "lastModifyDate": 1723628917,
-          "collection": "/api/3/workflow_collections/97845131-2528-42f5-b470-f17a3493d02b",
+          "lastModifyDate": 1726215803,
+          "collection": "/api/3/workflow_collections/6ab61629-f297-4907-8d6c-5de5ac37e9fb",
           "versions": [],
-          "triggerStep": "/api/3/workflow_steps/dd558f2e-d820-402c-a5be-dc101e03fad5",
+          "triggerStep": "/api/3/workflow_steps/b7e064ab-fe71-4015-8977-460dcd6ed8f8",
           "steps": [
-            {
-              "@type": "WorkflowStep",
-              "name": "Export Event",
-              "description": null,
-              "arguments": {
-                "name": "Arcanna.ai",
-                "config": "",
-                "params": {
-                  "jobId": "1",
-                  "eventId": "1"
-                },
-                "version": "1.2.0",
-                "connector": "arcanna-ai",
-                "operation": "export_event",
-                "operationTitle": "Export Event",
-                "pickFromTenant": false,
-                "step_variables": []
-              },
-              "status": null,
-              "top": "165",
-              "left": "125",
-              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
-              "group": null,
-              "uuid": "b4afd127-7a0d-463c-bd87-43852f6f8a2e"
-            },
             {
               "@type": "WorkflowStep",
               "name": "Start",
               "description": null,
               "arguments": {
-                "route": "58216df3-84ab-48e4-acd7-28c1455ef207",
+                "route": "d33ffd31-0518-484e-ad60-4e783f01a928",
                 "title": "ArcannaAi: Export Event",
                 "resources": [
                   "alerts"
@@ -1283,25 +1287,49 @@
               "left": "125",
               "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
               "group": null,
-              "uuid": "dd558f2e-d820-402c-a5be-dc101e03fad5"
+              "uuid": "b7e064ab-fe71-4015-8977-460dcd6ed8f8"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get Event",
+              "description": null,
+              "arguments": {
+                "name": "Arcanna.ai",
+                "config": "82c390ef-6d43-4d22-bf1d-55748a8987ee",
+                "params": {
+                  "jobId": "1",
+                  "eventId": "1"
+                },
+                "version": "1.2.0",
+                "connector": "arcanna-ai",
+                "operation": "export_event",
+                "operationTitle": "Get Event",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "e8e8fd3d-d051-4ed0-9186-d9fa63301638"
             }
           ],
           "routes": [
             {
               "@type": "WorkflowRoute",
-              "name": "Start -> Export Event",
-              "targetStep": "/api/3/workflow_steps/b4afd127-7a0d-463c-bd87-43852f6f8a2e",
-              "sourceStep": "/api/3/workflow_steps/dd558f2e-d820-402c-a5be-dc101e03fad5",
+              "name": "Start -> Get Event",
+              "targetStep": "/api/3/workflow_steps/e8e8fd3d-d051-4ed0-9186-d9fa63301638",
+              "sourceStep": "/api/3/workflow_steps/b7e064ab-fe71-4015-8977-460dcd6ed8f8",
               "label": null,
               "isExecuted": false,
-              "group": null,
-              "uuid": "2ce627cf-9012-45ea-9a7f-1788a9969f37"
+              "uuid": "116f6f5a-c458-409b-b908-69c6087016d6"
             }
           ],
           "groups": [],
           "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
-          "uuid": "fac6ae4e-79d1-48fb-bd8a-07c96e0abbbe",
-          "id": 1167,
+          "uuid": "ed51b091-6614-4250-881f-65e73d4ad5d1",
+          "id": 584,
           "owners": [],
           "isPrivate": false,
           "deletedAt": null,
@@ -1309,6 +1337,98 @@
           "recordTags": [
             "arcanna-ai"
           ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Start Job",
+          "aliasName": null,
+          "tag": null,
+          "description": "Start a job in Arcanna.ai",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1726215967,
+          "collection": "/api/3/workflow_collections/6ab61629-f297-4907-8d6c-5de5ac37e9fb",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/82534cc8-9cad-44d6-b32c-0ddb80e001d2",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "5e81ea80-4c5c-4d6e-b40e-fb1cd2553003",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": true,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "82534cc8-9cad-44d6-b32c-0ddb80e001d2"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Start Job",
+              "description": null,
+              "arguments": {
+                "name": "Arcanna.ai",
+                "config": "82c390ef-6d43-4d22-bf1d-55748a8987ee",
+                "params": {
+                  "jobId": "1",
+                  "username": ""
+                },
+                "version": "1.2.0",
+                "connector": "arcanna-ai",
+                "operation": "start_job",
+                "operationTitle": "Start job",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "61258560-ff9f-4406-85cf-14f80ba336f2"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Start Job",
+              "targetStep": "/api/3/workflow_steps/61258560-ff9f-4406-85cf-14f80ba336f2",
+              "sourceStep": "/api/3/workflow_steps/82534cc8-9cad-44d6-b32c-0ddb80e001d2",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "db9635a7-4e4d-46eb-86cb-9db4999bfa9e"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "fdd16357-7677-489a-8a7a-608bfa453da0",
+          "id": 585,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": []
         }
       ]
     }
