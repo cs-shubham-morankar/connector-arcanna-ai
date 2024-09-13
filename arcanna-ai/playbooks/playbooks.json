@@ -1145,7 +1145,7 @@
           "name": "Send Feedback",
           "aliasName": null,
           "tag": null,
-          "description": "Send an feedback for a event in Arcanna.ai server.",
+          "description": "Send feedback for an event in Arcanna.ai server.",
           "isActive": false,
           "debug": false,
           "singleRecordExecution": false,
@@ -1235,6 +1235,105 @@
           "recordTags": [
             "arcanna-ai"
           ]
+        },
+        {
+          "@type": "Workflow",
+          "triggerLimit": null,
+          "name": "Get Job by Name",
+          "aliasName": null,
+          "tag": null,
+          "description": "Retrieve the metadata of a job from Arcanna.ai based on the provided job name",
+          "isActive": true,
+          "debug": false,
+          "singleRecordExecution": false,
+          "remoteExecutableFlag": false,
+          "parameters": [],
+          "synchronous": false,
+          "lastModifyDate": 1726217731,
+          "collection": "/api/3/workflow_collections/6ab61629-f297-4907-8d6c-5de5ac37e9fb",
+          "versions": [],
+          "triggerStep": "/api/3/workflow_steps/ff1284a0-95e9-4e0d-a610-4eea687785f8",
+          "steps": [
+            {
+              "@type": "WorkflowStep",
+              "name": "Start",
+              "description": null,
+              "arguments": {
+                "route": "063980d7-cd32-428b-bb93-4e35d4b44f4a",
+                "resources": [
+                  "alerts"
+                ],
+                "inputVariables": [],
+                "step_variables": {
+                  "input": {
+                    "params": [],
+                    "records": "{{vars.input.records}}"
+                  }
+                },
+                "displayConditions": {
+                  "alerts": {
+                    "sort": [],
+                    "limit": 30,
+                    "logic": "AND",
+                    "filters": []
+                  }
+                },
+                "executeButtonText": "Execute",
+                "noRecordExecution": false,
+                "singleRecordExecution": false
+              },
+              "status": null,
+              "top": "30",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/f414d039-bb0d-4e59-9c39-a8f1e880b18a",
+              "group": null,
+              "uuid": "ff1284a0-95e9-4e0d-a610-4eea687785f8"
+            },
+            {
+              "@type": "WorkflowStep",
+              "name": "Get job by name",
+              "description": null,
+              "arguments": {
+                "name": "Arcanna.ai",
+                "config": "82c390ef-6d43-4d22-bf1d-55748a8987ee",
+                "params": {
+                  "jobName": "my job"
+                },
+                "version": "1.2.0",
+                "connector": "arcanna-ai",
+                "operation": "get_job_by_name",
+                "operationTitle": "Get Job By Name",
+                "pickFromTenant": false,
+                "step_variables": []
+              },
+              "status": null,
+              "top": "165",
+              "left": "125",
+              "stepType": "/api/3/workflow_step_types/0bfed618-0316-11e7-93ae-92361f002671",
+              "group": null,
+              "uuid": "cee831cc-bb17-46a0-9d71-ab2a9619a928"
+            }
+          ],
+          "routes": [
+            {
+              "@type": "WorkflowRoute",
+              "name": "Start -> Get job by name",
+              "targetStep": "/api/3/workflow_steps/cee831cc-bb17-46a0-9d71-ab2a9619a928",
+              "sourceStep": "/api/3/workflow_steps/ff1284a0-95e9-4e0d-a610-4eea687785f8",
+              "label": null,
+              "isExecuted": false,
+              "uuid": "e0d5685b-f3d7-409d-bb2a-5751bc25ecaf"
+            }
+          ],
+          "groups": [],
+          "priority": "/api/3/picklists/2b563c61-ae2c-41c0-a85a-c9709585e3f2",
+          "uuid": "83417b6d-5147-4ada-8985-d2306f503012",
+          "id": 587,
+          "owners": [],
+          "isPrivate": false,
+          "deletedAt": null,
+          "importedBy": [],
+          "recordTags": []
         },
         {
           "@type": "Workflow",

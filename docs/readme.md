@@ -7,42 +7,33 @@ at https://arcanna.ai
 
 ### Version information
 
-Connector Version: 1.1.0
+Connector Version: 1.2.0
 
 Authored By: Arcanna.ai
 
 Certified: No
 
-## Release Notes for version 1.1.0
+## Release Notes for version 1.2.0
 
-Following enhancements have been made to the Arcanna.ai Connector in version 1.1.0:
-<ul>
-<li><p>Added the following new operations and playbooks:</p>
+Following enhancements have been made to the Arcanna.ai Connector in version 1.2.0:
 
-<ul>
-<li>Trigger AI Job Training</li>
-<li>Get Decision Set</li>
-<li>Export Event</li>
-</ul></li>
-<li><p>Added new parameters in some operation as follows:</p>
-
-<ul>
-<li><code>Retry Count</code> and <code>Wait Time</code> parameters in <code>Get Arcanna Response</code> operation.</li>
-</ul></li>
-<li><p>Renamed the following parameter for specified action:</p>
-
-<ul>
-<li>In action <code>Send Feedback</code>, Username is now User.</li>
-</ul></li>
-<li><p>Renamed the following actions:</p>
-
-<ul>
-<li><code>Send Event</code> to <code>Send To Arcanna</code>.</li>
-<li><code>Get Jobs List</code> to <code>Get Jobs</code>.</li>
-<li><code>Send Event Feedback</code> to <code>Send Feedback</code>.</li>
-<li><code>Get Event Status</code> to <code>Get Arcanna Response</code>.</li>
-</ul></li>
-</ul>
+- Added the following new operations:
+    - Start Job
+    - Stop Job
+    - Get Job by Name
+- Updated logo
+- Refactored code for easier maintenance
+- Renamed the following operations:
+    - `Export Event` to `Get Event`
+    - `Trigger AI Job Training` to `Trigger Job Training`
+    - `Get Arcanna Response` to `Get Decision on Event`
+    - `Send to Arcanna` to `Send Event`
+- Fixed bug on `Send Event` operation
+- Added relevant descriptions/tooltips to operations and parameters
+- Added output schemas on all operations
+- Updated the following parameters:
+    - In operation `Send Feedback` renamed parameter `Closure status` to `Feedback`
+    - In operation `Send Event` removed deprecated `Title` parameter
 
 ## Installing the connector
 
@@ -81,115 +72,222 @@ click [here](https://docs.fortinet.com/document/fortisoar/0.0.0/configuring-a-co
 
 The following automated operations can be included in playbooks and you can also use the annotations to access
 operations from FortiSOAR&trade; release 4.10.0 and onwards:
-<table border=1><thead><tr><th>Function</th><th>Description</th><th>Annotation and Category</th></tr></thead><tbody><tr><td>Get Arcanna Response</td><td>Retrieves a event status from Arcanna.ai server based on the job ID and event ID that you have specified.</td><td>get_arcanna_response <br/>Investigation</td></tr>
-<tr><td>Trigger AI Job Training</td><td>Trigger AI job training in Arcanna.ai server based on the job ID you have specified.</td><td>trigger_training <br/>Investigation</td></tr>
-<tr><td>Get Decision Set</td><td>Retrieve the information of decision set from Arcanna.ai server based on the job ID you have specified.</td><td>get_decision_set <br/>Investigation</td></tr>
-<tr><td>Export Event</td><td>Exports an event from Arcanna.ai server based on the job ID and event ID that you have specified.</td><td>export_event <br/>Investigation</td></tr>
-<tr><td>Send Feedback</td><td>Send an feedback for a event in Arcanna.ai server.</td><td>send_feedback <br/>Investigation</td></tr>
-<tr><td>Get Jobs</td><td>Retrieves a list of all the jobs from Arcanna.ai server.</td><td>get_jobs <br/>Investigation</td></tr>
-<tr><td>Send To Arcanna</td><td>Send an event in Arcanna.ai server based on the job ID, title, and other input parameters you have specified.</td><td>send_to_arcanna <br/>Investigation</td></tr>
-</tbody></table>
+<table border=1>
+  <thead>
+    <tr><th>Function</th><th>Description</th><th>Annotation and Category</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Get Decision on Event</td><td>Retrieves a decision from Arcanna.ai for a previously ingested event using the specified job ID and event ID.</td><td>get_arcanna_response <br/>Investigation</td></tr>
+    <tr><td>Trigger Job Training</td><td>Trigger the training of Arcanna.ai models for the provided job ID.</td><td>trigger_training <br/>Utilities</td></tr>
+    <tr><td>Get Job Decision Set</td><td>Retrieve the available decisions of a job in Arcanna.ai, based on the job ID you have specified.</td><td>get_decision_set <br/>Investigation</td></tr>
+    <tr><td>Get Event</td><td>Retrieves an event from Arcanna.ai based on the job ID and event ID that you have specified.</td><td>export_event <br/>Investigation</td></tr>
+    <tr><td>Send Feedback</td><td>Send feedback for an event in Arcanna.ai.</td><td>send_feedback <br/>Investigation</td></tr>
+    <tr><td>Get Jobs</td><td>Retrieves a list of all the jobs from Arcanna.ai.</td><td>get_jobs <br/>Utilities</td></tr>
+    <tr><td>Send Event</td><td>Send an event to Arcanna.ai.</td><td>send_to_arcanna <br/>Investigation</td></tr>
+    <tr><td>Get Job by Name</td><td>Retrieve details of a job from Arcanna.ai based on the job name.</td><td>get_job_by_name <br/>Utilities</td></tr>
+    <tr><td>Start job</td><td>Start job in Arcanna.ai based on the provided job id.</td><td>start_job <br/>Utilities</td></tr>
+    <tr><td>Stop job</td><td>Stop job in Arcanna.ai based on the provided job id.</td><td>stop_job <br/>Utilities</td></tr>
+  </tbody>
+</table>
 
-### operation: Get Arcanna Response
+Here’s the markdown documentation for each operation described in the provided JSON:
 
-#### Input parameters
+---
 
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Job ID</td><td>Specify the ID of the job based on which you want to retrieve event status from Arcanna.ai server.
-</td></tr><tr><td>Event ID</td><td>Specify the ID of the event based on which you want to retrieve event status from Arcanna.ai server.
-</td></tr><tr><td>Retry Count</td><td>Specify the retry count of the event based on which you want to retrieve event status from Arcanna.ai server.
-</td></tr><tr><td>Wait Time</td><td>Specify the wait time of the event based on which you want to retrieve event status from Arcanna.ai server.
-</td></tr></tbody></table>
-
-#### Output
-
-The output contains a non-dictionary value.
-
-### operation: Trigger AI Job Training
-
-#### Input parameters
-
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Job ID</td><td>Specify the ID of the job based on which you want to trigger AI job training in Arcanna.ai server.
-</td></tr></tbody></table>
-
-#### Output
-
-The output contains a non-dictionary value.
-
-### operation: Get Decision Set
+### operation: Get Decision on Event
 
 #### Input parameters
 
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Job ID</td><td>Specify the ID of the job based on which you want to retrieve decision set from Arcanna.ai server.
-</td></tr></tbody></table>
+<table border=1>
+<thead><tr><th>Parameter</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Job ID</td><td>Specify the ID of the job to retrieve a decision for a previously ingested event in Arcanna.ai.</td></tr>
+<tr><td>Event ID</td><td>Specify the ID of the event for which the decision will be retrieved.</td></tr>
+<tr><td>Retry Count</td><td>Number of retries while waiting for the decision to be available. Default value: 10.</td></tr>
+<tr><td>Wait Time</td><td>Time in seconds between retries. Default value: 5.</td></tr>
+</tbody>
+</table>
 
 #### Output
 
-The output contains a non-dictionary value.
+The output contains the decision result along with additional metadata such as status, confidence score, and any error messages.
 
-### operation: Export Event
+---
+
+### operation: Trigger Job Training
 
 #### Input parameters
 
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Job ID</td><td>Specify the ID of the job based on which you want to export event from Arcanna.ai server.
-</td></tr><tr><td>Event ID</td><td>Specify the ID of the event based on which you want to export event from Arcanna.ai server.
-</td></tr></tbody></table>
+<table border=1>
+<thead><tr><th>Parameter</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Job ID</td><td>Specify the ID of the job to trigger AI job training in Arcanna.ai.</td></tr>
+<tr><td>Username</td><td>The username that triggers the action. Defaults to the owner of the API key if not specified.</td></tr>
+</tbody>
+</table>
 
 #### Output
 
-The output contains a non-dictionary value.
+The output contains a status message and any associated error messages.
+
+---
+
+### operation: Get Job Decision Set
+
+#### Input parameters
+
+<table border=1>
+<thead><tr><th>Parameter</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Job ID</td><td>Specify the ID of the job to retrieve its available decisions in Arcanna.ai.</td></tr>
+</tbody>
+</table>
+
+#### Output
+
+The output contains the set of decisions for the specified job.
+
+---
+
+### operation: Get Event
+
+#### Input parameters
+
+<table border=1>
+<thead><tr><th>Parameter</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Job ID</td><td>Specify the job ID to retrieve the event in Arcanna.ai.</td></tr>
+<tr><td>Event ID</td><td>Specify the event ID to retrieve.</td></tr>
+</tbody>
+</table>
+
+#### Output
+
+The output contains the retrieved event data, including the event ID, status, and timestamp.
+
+---
 
 ### operation: Send Feedback
 
 #### Input parameters
 
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>User</td><td>Specify the user based on which you want to send feedback of an event in Arcanna.ai server.
-</td></tr><tr><td>Job ID</td><td>Specify the ID of the job based on which you want to send feedback of an event in Arcanna.ai server.
-</td></tr><tr><td>Event ID</td><td>Specify the ID of the event based on which you want to send feedback of an event in Arcanna.ai server.
-</td></tr><tr><td>Closing Status</td><td>Specify the closing status based on which you want to send feedback of an event in Arcanna.ai server.
-</td></tr></tbody></table>
+<table border=1>
+<thead><tr><th>Parameter</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Job ID</td><td>Specify the job ID for which the feedback will be provided.</td></tr>
+<tr><td>Event ID</td><td>Specify the event ID for which the feedback is provided.</td></tr>
+<tr><td>Feedback</td><td>Choose feedback action: Drop or Escalate.</td></tr>
+<tr><td>User</td><td>Specify the username that will be associated with the feedback. Defaults to the owner of the API key if not specified.</td></tr>
+</tbody>
+</table>
 
 #### Output
 
-The output contains a non-dictionary value.
+The output contains a status message confirming the feedback submission.
+
+---
 
 ### operation: Get Jobs
 
 #### Input parameters
 
-None.
+_None_
 
 #### Output
 
-The output contains a non-dictionary value.
+The output contains a list of all jobs from Arcanna.ai, with detailed job information such as job ID, status, processed documents, and timestamps.
 
-### operation: Send To Arcanna
+---
+
+### operation: Send Event
 
 #### Input parameters
 
-<table border=1><thead><tr><th>Parameter</th><th>Description</th></tr></thead><tbody><tr><td>Job ID</td><td>Specify the ID of the job based on which you want to send event in Arcanna.ai server.
-</td></tr><tr><td>Title</td><td>Specify the title based on which you want to send event in Arcanna.ai server.
-</td></tr><tr><td>Body</td><td>Specify the body based on which you want to send event in Arcanna.ai server.
-</td></tr><tr><td>Case ID</td><td>Specify the ID of the case based on which you want to send event in Arcanna.ai server.
-</td></tr></tbody></table>
+<table border=1>
+<thead><tr><th>Parameter</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Job ID</td><td>Specify the job ID where the event will be submitted.</td></tr>
+<tr><td>Body</td><td>Provide the JSON body that contains the event data to be sent to Arcanna.ai.</td></tr>
+<tr><td>Case ID</td><td>Optional: Specify the case ID. If not provided, Arcanna will generate one automatically.</td></tr>
+</tbody>
+</table>
 
 #### Output
 
-The output contains a non-dictionary value.
+The output contains information about the event submission, including the job ID, event ID, status, and timestamp.
+
+---
+
+### operation: Get Job By Name
+
+#### Input parameters
+
+<table border=1>
+<thead><tr><th>Parameter</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Job Name</td><td>Specify the name of the job to retrieve its details from Arcanna.ai.</td></tr>
+</tbody>
+</table>
+
+#### Output
+
+The output contains detailed information about the job, including job ID, status, retraining state, and associated labels and features.
+
+---
+
+### operation: Start Job
+
+#### Input parameters
+
+<table border=1>
+<thead><tr><th>Parameter</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Job ID</td><td>Specify the ID of the job to start in Arcanna.ai.</td></tr>
+<tr><td>Username</td><td>Optional: Specify the username that triggers the job. Defaults to the owner of the API key if not provided.</td></tr>
+</tbody>
+</table>
+
+#### Output
+
+The output contains a status message confirming the job start or an error message if applicable.
+
+---
+
+### operation: Stop Job
+
+#### Input parameters
+
+<table border=1>
+<thead><tr><th>Parameter</th><th>Description</th></tr></thead>
+<tbody>
+<tr><td>Job ID</td><td>Specify the ID of the job to stop in Arcanna.ai.</td></tr>
+<tr><td>Username</td><td>Optional: Specify the username that triggers the job stop. Defaults to the owner of the API key if not provided.</td></tr>
+</tbody>
+</table>
+
+#### Output
+
+The output contains a status message confirming the job stop or an error message if applicable.
+
+---
 
 ## Included playbooks
 
-The `Sample - Arcanna.ai - 1.1.0` playbook collection comes bundled with the Arcanna.ai connector. These playbooks
+The `Sample - Arcanna.ai - 1.2.0` playbook collection comes bundled with the Arcanna.ai connector. These playbooks
 contain steps using which you can perform all supported actions. You can see bundled playbooks in the **Automation** > *
 *Playbooks** section in FortiSOAR&trade; after importing the Arcanna.ai connector.
 
-- Arcanna.ai UseCase
-- Export Event
-- Get Arcanna Response
+- Arcanna.ai flow example
+- Start job
+- Stop Job
+- Get Event
+- Get Decision on Event
 - Get Decision Set
 - Get Jobs
+- Get Job by Name
 - Send Feedback
 - Send To Arcanna
-- Trigger AI Job Training
+- Trigger Job Training
 
 **Note**: If you are planning to use any of the sample playbooks in your environment, ensure that you clone those
 playbooks and move them to a different collection since the sample playbook collection gets deleted during connector

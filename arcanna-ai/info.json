@@ -210,7 +210,7 @@
             "title": "Send Feedback",
             "operation": "send_feedback",
             "annotation": "send_feedback",
-            "description": "Send an feedback for a event in Arcanna.ai.",
+            "description": "Send feedback for an event in Arcanna.ai.",
             "parameters": [
                 {
                     "title": "Job ID",
