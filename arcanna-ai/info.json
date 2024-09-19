@@ -1,445 +1,447 @@
 {
-    "name": "arcanna-ai",
-    "version": "1.2.0",
-    "label": "Arcanna.ai",
-    "description": "Arcanna.ai is a platform for delivering decision intelligence. It augments Security Operation Center analysts in dealing with incoming threats by increasing analyst efficiency in decision-making. More information is available at https://arcanna.ai",
-    "publisher": "Arcanna.ai",
-    "icon_small_name": "small.png",
-    "icon_large_name": "large.png",
-    "category": "Threat Intelligence",
-    "configuration": {
-        "fields": [
-            {
-                "title": "Protocol",
-                "type": "select",
-                "name": "protocol",
-                "required": true,
-                "visible": true,
-                "editable": true,
-                "options": [
-                    "HTTP",
-                    "HTTPS"
-                ]
-            },
-            {
-                "title": "Server Address",
-                "type": "text",
-                "name": "server_address",
-                "required": true,
-                "visible": true,
-                "editable": true
-            },
-            {
-                "title": "Server Port",
-                "type": "text",
-                "name": "port",
-                "required": true,
-                "visible": true,
-                "editable": true,
-                "value": "443"
-            },
-            {
-                "title": "Api Key",
-                "type": "password",
-                "name": "apiKey",
-                "required": true,
-                "visible": true,
-                "editable": true,
-                "value": null
-            },
-            {
-                "title": "Verify SSL",
-                "type": "checkbox",
-                "name": "verify_ssl",
-                "required": false,
-                "visible": true,
-                "editable": true,
-                "value": true
-            }
-        ]
-    },
-    "operations": [
+  "name": "arcanna-ai",
+  "version": "1.2.0",
+  "label": "Arcanna.ai",
+  "description": "Arcanna.ai is a platform for delivering decision intelligence. It augments Security Operation Center analysts in dealing with incoming threats by increasing analyst efficiency in decision-making. More information is available at https://arcanna.ai",
+  "publisher": "Arcanna.ai",
+  "cs_approved": true,
+  "cs_compatible": true,
+  "contributor": "Arcanna.ai",
+  "icon_small_name": "small.png",
+  "icon_large_name": "large.png",
+  "category": "Threat Intelligence",
+  "help_online": "",
+  "configuration": {
+    "fields": [
+      {
+        "title": "Protocol",
+        "type": "select",
+        "name": "protocol",
+        "required": true,
+        "visible": true,
+        "editable": true,
+        "options": [
+          "HTTP",
+          "HTTPS"
+        ],
+        "description": "Specify the protocol of the Arcanna.ai server to connect and perform automated operations."
+      },
+      {
+        "title": "Server Address",
+        "type": "text",
+        "name": "server_address",
+        "required": true,
+        "visible": true,
+        "editable": true,
+        "description": "Specify the URL of the Arcanna.ai server to connect and perform automated operations."
+      },
+      {
+        "title": "Server Port",
+        "type": "text",
+        "name": "port",
+        "required": true,
+        "visible": true,
+        "editable": true,
+        "value": "443",
+        "description": "Specify the port of the Arcanna.ai server to connect and perform automated operations."
+      },
+      {
+        "title": "Api Key",
+        "type": "password",
+        "name": "apiKey",
+        "required": true,
+        "visible": true,
+        "editable": true,
+        "description": "Specify the api key to access the Arcanna.ai server to connect and perform automated operations."
+      },
+      {
+        "title": "Verify SSL",
+        "description": "Specifies whether the SSL certificate for the server is to be verified. By default, this option is set to True.",
+        "type": "checkbox",
+        "name": "verify_ssl",
+        "required": false,
+        "visible": true,
+        "editable": true,
+        "value": true
+      }
+    ]
+  },
+  "operations": [
+    {
+      "title": "Get Decision on Event",
+      "operation": "get_arcanna_response",
+      "annotation": "get_arcanna_response",
+      "description": "Retrieves a decision from Arcanna.ai for a previously ingested event using the specified job ID and event ID.",
+      "parameters": [
         {
-            "title": "Get Decision on Event",
-            "operation": "get_arcanna_response",
-            "annotation": "get_arcanna_response",
-            "description": "Retrieves a decision from Arcanna.ai for a previously ingested event using the specified job ID and event ID.",
-            "parameters": [
-                {
-                    "title": "Job ID",
-                    "type": "text",
-                    "name": "jobId",
-                    "required": true,
-                    "visible": true,
-                    "editable": true
-                },
-                {
-                    "title": "Event ID",
-                    "type": "text",
-                    "name": "eventId",
-                    "required": true,
-                    "visible": true,
-                    "editable": true
-                },
-                {
-                    "title": "Retry Count",
-                    "type": "integer",
-                    "name": "retryCount",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": 10,
-                    "tooltip": "Number of retries while waiting for the decision to be available."
-                },
-                {
-                    "title": "Wait Time",
-                    "type": "integer",
-                    "name": "waitTime",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": 5,
-                    "tooltip": "The wait time between retries."
-                }
-            ],
-            "category": "investigation",
-            "output_schema": {
-                "result": "",
-                "status": "OK",
-                "outlier": false,
-                "event_id": "",
-                "bucket_state": "",
-                "result_label": "",
-                "error_message": "",
-                "confidence_score": 0,
-                "ingest_timestamp": ""
-            },
-            "enabled": true,
-            "open": false
+          "title": "Job ID",
+          "description": "Specify the ID of the job based on which you want to retrieve event status from Arcanna.ai server.",
+          "type": "text",
+          "name": "jobId",
+          "required": true,
+          "visible": true,
+          "editable": true
         },
         {
-            "title": "Trigger Job Training",
-            "operation": "trigger_training",
-            "annotation": "trigger_training",
-            "description": "Trigger the training of Arcanna.ai models for the provided job ID.",
-            "parameters": [
-                {
-                    "title": "Job ID",
-                    "type": "text",
-                    "name": "jobId",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "tooltip": ""
-                },
-                {
-                    "title": "Username",
-                    "type": "text",
-                    "name": "username",
-                    "required": false,
-                    "visible": true,
-                    "editable": true,
-                    "value": "",
-                    "tooltip": "The username that launches the action in Arcanna.ai. If not specified, it will default to the owner of the API key used."
-                }
-            ],
-            "output_schema": {
-                "status": "OK",
-                "error_message": ""
-            },
-            "category": "utilities",
-            "enabled": true,
-            "open": false
+          "title": "Event ID",
+          "description": "Specify the ID of the event based on which you want to retrieve event status from Arcanna.ai server.",
+          "type": "text",
+          "name": "eventId",
+          "required": true,
+          "visible": true,
+          "editable": true
         },
         {
-            "title": "Get Job Decision Set",
-            "operation": "get_decision_set",
-            "annotation": "get_decision_set",
-            "description": "Retrieve the available decisions of a job in Arcanna.ai, based on the job ID you have specified.",
-            "parameters": [
-                {
-                    "title": "Job ID",
-                    "type": "text",
-                    "name": "jobId",
-                    "required": true,
-                    "visible": true,
-                    "editable": true
-                }
-            ],
-            "output_schema": [
-                ""
-            ],
-            "category": "investigation",
-            "enabled": true,
-            "open": false
+          "title": "Retry Count",
+          "description": "Specify the retry count of the event based on which you want to retrieve event status from Arcanna.ai server.",
+          "type": "integer",
+          "name": "retryCount",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": 10,
+          "tooltip": "Number of retries while waiting for the decision to be available."
         },
         {
-            "title": "Get Event",
-            "operation": "export_event",
-            "annotation": "export_event",
-            "description": "Retrieves an event from Arcanna.ai based on the job ID and event ID that you have specified.",
-            "parameters": [
-                {
-                    "title": "Job ID",
-                    "type": "text",
-                    "name": "jobId",
-                    "required": true,
-                    "visible": true,
-                    "editable": true
-                },
-                {
-                    "title": "Event ID",
-                    "type": "text",
-                    "name": "eventId",
-                    "required": true,
-                    "visible": true,
-                    "editable": true
-                }
-            ],
-            "output_schema": {
-                "status": "OK",
-                "event_id": "",
-                "arcanna_event": {},
-                "ingest_timestamp": ""
-            },
-            "category": "investigation",
-            "enabled": true,
-            "open": false
-        },
-        {
-            "title": "Send Feedback",
-            "operation": "send_feedback",
-            "annotation": "send_feedback",
-            "description": "Send feedback for an event in Arcanna.ai.",
-            "parameters": [
-                {
-                    "title": "Job ID",
-                    "type": "text",
-                    "name": "jobId",
-                    "required": true,
-                    "visible": true,
-                    "editable": true
-                },
-                {
-                    "title": "Event ID",
-                    "type": "text",
-                    "name": "eventId",
-                    "required": true,
-                    "visible": true,
-                    "editable": true
-                },
-                {
-                    "title": "Feedback",
-                    "type": "select",
-                    "name": "feedback",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "tooltip": "The feedback you want to send on to Arcanna.ai for the specified event.",
-                    "options": [
-                        "Drop",
-                        "Escalate"
-                    ]
-                },
-                {
-                    "title": "User",
-                    "type": "text",
-                    "name": "user",
-                    "required": false,
-                    "visible": true,
-                    "editable": true,
-                    "tooltip": "Provide the username that will be attached to the feedback in Arcanna.ai. If no username is provided, the owner of the API key will be used."
-                }
-            ],
-            "category": "investigation",
-            "output_schema": {
-                "status": ""
-            },
-            "enabled": true,
-            "open": false
-        },
-        {
-            "title": "Get Jobs",
-            "operation": "get_jobs",
-            "annotation": "get_jobs",
-            "description": "Retrieves a list of all the jobs from Arcanna.ai.",
-            "parameters": [],
-            "category": "utilities",
-            "output_schema": [
-                {
-                    "job_id": 0,
-                    "title": "",
-                    "status": "",
-                    "retrain_state": "",
-                    "retrain_msg": "",
-                    "labels": [
-                        ""
-                    ],
-                    "features": [
-                        ""
-                    ],
-                    "processed_documents_count": 0,
-                    "feedback_documents_count": 0,
-                    "last_processed_timestamp": "",
-                    "last_feedback_timestamp": "",
-                    "last_train_start_timestamp": "",
-                    "last_train_finished_timestamp": "",
-                    "invalid": false
-                }
-            ],
-            "enabled": true,
-            "open": false
-        },
-        {
-            "title": "Send Event",
-            "operation": "send_to_arcanna",
-            "annotation": "send_to_arcanna",
-            "description": "Send an event to Arcanna.ai.",
-            "parameters": [
-                {
-                    "title": "Job ID",
-                    "type": "text",
-                    "name": "jobId",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "tooltip": "the Job ID to which the case should be submitted in Arcanna."
-                },
-                {
-                    "title": "Body",
-                    "type": "json",
-                    "name": "body",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "tooltip": "JSON Body to be sent to Arcanna."
-                },
-                {
-                    "title": "Case ID",
-                    "type": "text",
-                    "name": "caseId",
-                    "required": false,
-                    "visible": true,
-                    "editable": true,
-                    "tooltip": "The ID that Arcanna should use when storing the case. If no ID is specified, Arcanna will automatically generate one."
-                }
-            ],
-            "category": "investigation",
-            "output_schema": {
-                "job_id": 1312,
-                "status": "",
-                "event_id": "",
-                "error_message": "",
-                "ingest_timestamp": ""
-            },
-            "enabled": true,
-            "open": false
-        },
-        {
-            "title": "Get Job By Name",
-            "operation": "get_job_by_name",
-            "description": "Retrieve details of a job from Arcanna.ai based on the job name.",
-            "parameters": [
-                {
-                    "title": "Job Name",
-                    "type": "text",
-                    "name": "jobName",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                }
-            ],
-            "open": false,
-            "category": "utilities",
-            "output_schema": {
-                "job_id": 0,
-                "title": "",
-                "status": "",
-                "retrain_state": "",
-                "retrain_msg": "",
-                "labels": [
-                    ""
-                ],
-                "features": [
-                    ""
-                ],
-                "processed_documents_count": 0,
-                "feedback_documents_count": 0,
-                "last_processed_timestamp": "",
-                "last_feedback_timestamp": "",
-                "last_train_start_timestamp": "",
-                "last_train_finished_timestamp": "",
-                "invalid": false
-            }
-        },
-        {
-            "title": "Start job",
-            "operation": "start_job",
-            "description": "Start job in Arcanna.ai based on the provided job id.",
-            "parameters": [
-                {
-                    "title": "Job Id",
-                    "type": "text",
-                    "name": "jobId",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                },
-                {
-                    "title": "username",
-                    "type": "text",
-                    "name": "username",
-                    "required": false,
-                    "visible": true,
-                    "editable": true,
-                    "value": "",
-                    "tooltip": "The username that launches the action in Arcanna.ai. If not specified, it will default to the owner of the API key used."
-                }
-            ],
-            "open": false,
-            "category": "utilities",
-            "output_schema": {
-                "status": "",
-                "error_message": ""
-            }
-        },
-        {
-            "title": "Stop Job",
-            "operation": "stop_job",
-            "description": "Stop job in Arcanna.ai based on the provided job id.",
-            "parameters": [
-                {
-                    "title": "Job Id",
-                    "type": "text",
-                    "name": "jobId",
-                    "required": true,
-                    "visible": true,
-                    "editable": true,
-                    "value": ""
-                },
-                {
-                    "title": "Username",
-                    "type": "text",
-                    "name": "username",
-                    "required": false,
-                    "visible": true,
-                    "editable": true,
-                    "value": "",
-                    "tooltip": "The username that launches the action in Arcanna.ai. If not specified, it will default to the owner of the API key used."
-                }
-            ],
-            "open": false,
-            "category": "utilities",
-            "output_schema": {
-                "status": "",
-                "error_message": ""
-            }
+          "title": "Wait Time",
+          "description": "Specify the wait time of the event based on which you want to retrieve event status from Arcanna.ai server.",
+          "type": "integer",
+          "name": "waitTime",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "value": 5,
+          "tooltip": "The wait time between retries."
         }
-    ],
-    "cs_approved": false,
-    "cs_compatible": true,
-    "contributor": "Arcanna.ai",
-    "help_online": "https://github.com/fortinet-fortisoar/connector-arcanna-ai/blob/release/1.1.0/docs/readme.md"
+      ],
+      "category": "investigation",
+      "output_schema": {
+        "bucket_state": "",
+        "confidence_score": "",
+        "error_message": "",
+        "event_id": "",
+        "ingest_timestamp": "",
+        "outlier": "",
+        "result": "",
+        "result_label": "",
+        "status": ""
+      },
+      "enabled": true
+    },
+    {
+      "title": "Trigger Job Training",
+      "operation": "trigger_training",
+      "annotation": "trigger_training",
+      "description": "Trigger the training of Arcanna.ai models for the provided job ID.",
+      "parameters": [
+        {
+          "title": "Job ID",
+          "description": "Specify the ID of the job based on which you want to trigger AI job training in Arcanna.ai server.",
+          "type": "text",
+          "name": "jobId",
+          "required": true,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "description": "Specify the username that launches the action in Arcanna.ai. If not specified, it will default to the owner of the API key used.",
+          "editable": true,
+          "name": "username",
+          "required": false,
+          "title": "Username",
+          "tooltip": "Specify the username that launches the action in Arcanna.ai. If not specified, it will default to the owner of the API key used.",
+          "type": "text",
+          "visible": true
+        }
+      ],
+      "output_schema": {
+        "error_message": "",
+        "status": ""
+      },
+      "category": "utilities",
+      "enabled": true
+    },
+    {
+      "title": "Get Job Decision Set",
+      "operation": "get_decision_set",
+      "annotation": "get_decision_set",
+      "description": "Retrieve the available decisions of a job in Arcanna.ai, based on the job ID you have specified.",
+      "parameters": [
+        {
+          "title": "Job ID",
+          "description": "Specify the ID of the job based on which you want to retrieve decision set from Arcanna.ai server.",
+          "type": "text",
+          "name": "jobId",
+          "required": true,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "output_schema": [],
+      "category": "investigation",
+      "enabled": true
+    },
+    {
+      "title": "Get Event",
+      "operation": "export_event",
+      "annotation": "export_event",
+      "description": "Retrieves an event from Arcanna.ai based on the job ID and event ID that you have specified.",
+      "parameters": [
+        {
+          "title": "Job ID",
+          "description": "Specify the ID of the job based on which you want to retrieve event from Arcanna.ai server.",
+          "type": "text",
+          "name": "jobId",
+          "required": true,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Event ID",
+          "description": "Specify the ID of the event based on which you want to retrieve event from Arcanna.ai server.",
+          "type": "text",
+          "name": "eventId",
+          "required": true,
+          "visible": true,
+          "editable": true
+        }
+      ],
+      "output_schema": {
+        "arcanna_event": {},
+        "event_id": "",
+        "ingest_timestamp": "",
+        "status": ""
+      },
+      "category": "investigation",
+      "enabled": true
+    },
+    {
+      "title": "Send Feedback",
+      "operation": "send_feedback",
+      "annotation": "send_feedback",
+      "description": "Send feedback for an event in Arcanna.ai.",
+      "parameters": [
+        {
+          "title": "Job ID",
+          "description": "Specify the ID of the job based on which you want to send feedback of an event in Arcanna.ai server.",
+          "type": "text",
+          "name": "jobId",
+          "required": true,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Event ID",
+          "description": "Specify the ID of the event based on which you want to send feedback of an event in Arcanna.ai server.",
+          "type": "text",
+          "name": "eventId",
+          "required": true,
+          "visible": true,
+          "editable": true
+        },
+        {
+          "title": "Feedback",
+          "description": "Specify the feedback you want to send on to Arcanna.ai for the specified event.",
+          "type": "select",
+          "name": "feedback",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Specify the feedback you want to send on to Arcanna.ai for the specified event.",
+          "options": [
+            "Drop",
+            "Escalate"
+          ]
+        },
+        {
+          "title": "Username",
+          "description": "Specify the username that will be attached to the feedback in Arcanna.ai. If no username is provided, the owner of the API key will be used.",
+          "type": "text",
+          "name": "user",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Specify the username that will be attached to the feedback in Arcanna.ai. If no username is provided, the owner of the API key will be used."
+        }
+      ],
+      "category": "investigation",
+      "output_schema": {},
+      "enabled": true
+    },
+    {
+      "title": "Get Jobs",
+      "operation": "get_jobs",
+      "annotation": "get_jobs",
+      "description": "Retrieves a list of all the jobs from Arcanna.ai.",
+      "parameters": [],
+      "category": "utilities",
+      "output_schema": [
+        {
+          "features": [],
+          "feedback_documents_count": "",
+          "invalid": "",
+          "job_id": "",
+          "labels": [],
+          "last_feedback_timestamp": "",
+          "last_processed_timestamp": "",
+          "last_train_finished_timestamp": "",
+          "last_train_start_timestamp": "",
+          "processed_documents_count": "",
+          "retrain_msg": "",
+          "retrain_state": "",
+          "status": "",
+          "title": ""
+        }
+      ],
+      "enabled": true
+    },
+    {
+      "title": "Send Event",
+      "operation": "send_to_arcanna",
+      "annotation": "send_to_arcanna",
+      "description": "Send an event to Arcanna.ai.",
+      "parameters": [
+        {
+          "title": "Job ID",
+          "description": "Specify the Job ID to which the case should be submitted in Arcanna.",
+          "type": "text",
+          "name": "jobId",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Specify the Job ID to which the case should be submitted in Arcanna."
+        },
+        {
+          "title": "Body",
+          "description": "Specify the body based on which you want to send event in Arcanna.ai server.",
+          "type": "json",
+          "name": "body",
+          "required": true,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Specify the JSON body to be sent to Arcanna."
+        },
+        {
+          "title": "Case ID",
+          "description": "Specify the ID of the case based on which you want to send event in Arcanna.ai server.",
+          "type": "text",
+          "name": "caseId",
+          "required": false,
+          "visible": true,
+          "editable": true,
+          "tooltip": "Specify the ID that Arcanna should use when storing the case. If no ID is specified, Arcanna will automatically generate one."
+        }
+      ],
+      "category": "investigation",
+      "output_schema": {
+        "error_message": "",
+        "event_id": "",
+        "ingest_timestamp": "",
+        "job_id": "",
+        "status": ""
+      },
+      "enabled": true
+    },
+    {
+      "title": "Get Job By Name",
+      "category": "utilities",
+      "description": "Retrieve details of a job from Arcanna.ai based on the job name.",
+      "operation": "get_job_by_name",
+      "annotation": "get_job_by_name",
+      "output_schema": {
+        "features": [],
+        "feedback_documents_count": "",
+        "invalid": "",
+        "job_id": "",
+        "labels": [],
+        "last_feedback_timestamp": "",
+        "last_processed_timestamp": "",
+        "last_train_finished_timestamp": "",
+        "last_train_start_timestamp": "",
+        "processed_documents_count": "",
+        "retrain_msg": "",
+        "retrain_state": "",
+        "status": "",
+        "title": ""
+      },
+      "parameters": [
+        {
+          "title": "Job Name",
+          "description": "Specify the Job Name to retrieve details from Arcanna.ai",
+          "editable": true,
+          "name": "jobName",
+          "required": true,
+          "type": "text",
+          "visible": true,
+          "tooltip": "Specify the Job Name to retrieve details from Arcanna.ai"
+        }
+      ]
+    },
+    {
+      "title": "Start Job",
+      "category": "utilities",
+      "description": "Start job in Arcanna.ai based on the provided job id.",
+      "operation": "start_job",
+      "annotation": "start_job",
+      "output_schema": {
+        "error_message": "",
+        "status": ""
+      },
+      "parameters": [
+        {
+          "title": "Job ID",
+          "description": "Specify the Job ID to start job in Arcanna.ai",
+          "editable": true,
+          "name": "jobId",
+          "required": true,
+          "type": "text",
+          "visible": true,
+          "tooltip": "Specify the Job ID to start job in Arcanna.ai"
+        },
+        {
+          "title": "Username",
+          "description": "Specify the username to start job in Arcanna.ai",
+          "editable": true,
+          "name": "username",
+          "required": false,
+          "tooltip": "Specify the username to start job in Arcanna.ai",
+          "type": "text",
+          "visible": true
+        }
+      ]
+    },
+    {
+      "title": "Stop Job",
+      "category": "utilities",
+      "description": "Stop job in Arcanna.ai based on the provided job id.",
+      "operation": "stop_job",
+      "annotation": "stop_job",
+      "output_schema": {
+        "error_message": "",
+        "status": ""
+      },
+      "parameters": [
+        {
+          "title": "Job ID",
+          "editable": true,
+          "description": "Specify the Job ID to stop job in Arcanna.ai",
+          "name": "jobId",
+          "required": true,
+          "type": "text",
+          "visible": true,
+          "tooltip": "Specify the Job ID to stop job in Arcanna.ai"
+        },
+        {
+          "title": "Username",
+          "description": "Specify the username to stop job in Arcanna.ai",
+          "editable": true,
+          "name": "username",
+          "required": false,
+          "tooltip": "Specify the username to stop job in Arcanna.ai",
+          "type": "text",
+          "visible": true
+        }
+      ]
+    }
+  ]
 }

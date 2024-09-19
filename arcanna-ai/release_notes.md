@@ -12,8 +12,7 @@
     - `Get Arcanna Response` to `Get Decision on Event`
     - `Send to Arcanna` to `Send Event`
 - Fixed bug on `Send Event` operation
-- Added relevant descriptions/tooltips to operations and parameters
-- Added output schemas on all operations
+- Added output schemas for all operations
 - Updated the following parameters:
-	- In operation `Send Feedback` renamed parameter `Closure status` to `Feedback`
-    - In operation `Send Event` removed deprecated `Title` parameter 
+	- In operation `Send Feedback` renamed parameter `Closure Status` to `Feedback`
+    - In operation `Send Event` removed deprecated `Title` parameter

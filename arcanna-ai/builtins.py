@@ -19,5 +19,4 @@ supported_operations = {
   'get_job_by_name': get_job_by_name,
   'start_job': start_job,
   'stop_job': stop_job
-  
 }
