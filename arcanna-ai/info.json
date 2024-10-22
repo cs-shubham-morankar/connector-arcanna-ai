@@ -4,13 +4,13 @@
   "label": "Arcanna.ai",
   "description": "Arcanna.ai is a platform for delivering decision intelligence. It augments Security Operation Center analysts in dealing with incoming threats by increasing analyst efficiency in decision-making. More information is available at https://arcanna.ai",
   "publisher": "Arcanna.ai",
-  "cs_approved": true,
+  "cs_approved": false,
   "cs_compatible": true,
   "contributor": "Arcanna.ai",
   "icon_small_name": "small.png",
   "icon_large_name": "large.png",
   "category": "Threat Intelligence",
-  "help_online": "",
+  "help_online": "https://github.com/fortinet-fortisoar/connector-arcanna-ai/blob/release/1.2.0/docs/readme.md",
   "configuration": {
     "fields": [
       {
